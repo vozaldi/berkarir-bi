@@ -1,0 +1,115 @@
+@import './base';
+
+body {
+  color: var(--app-dark-text);
+  background: var(--app-background);
+  font-family: var(--font-app-sans);
+  -webkit-text-size-adjust: 100%;
+}
+
+*::selection {
+  background: var(--app-secondary);
+}
+
+#app-portal {
+  isolation: isolate;
+}
+
+/** Typography **/
+:root {
+  --app-scale: 1;
+  --text-xs: calc(0.75rem * var(--app-scale));
+  --text-sm: calc(0.875rem * var(--app-scale));
+  --text-base: calc(1rem * var(--app-scale));
+  --text-lg: calc(1.125rem * var(--app-scale));
+  --text-xl: calc(1.25rem * var(--app-scale));
+  --text-2xl: calc(1.5rem * var(--app-scale));
+  --text-3xl: calc(1.875rem * var(--app-scale));
+}
+
+.typography-sm:root {
+  --app-scale: 0.875;
+}
+
+.typography-lg:root {
+  --app-scale: 1.125;
+}
+
+.typography-xl:root {
+  --app-scale: 1.375;
+}
+
+.katex-content svg {
+  max-width: 300px;
+}
+
+/** Forms **/
+.input-text-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-text-group .form-control {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+
+  &.is-invalid {
+    border-color: var(--color-red-500);
+  }
+}
+
+.input-text-group .input-group-float {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  pointer-events: none;
+
+  & > * {
+    pointer-events: auto;
+  }
+}
+
+/** Article **/
+.article-content {
+  @apply text-base
+}
+
+.article-content ul {
+  @apply list-disc pl-6 pb-[1rem];
+}
+
+.article-content ol {
+  @apply list-decimal pl-6 pb-[1rem]
+}
+
+.article-content p {
+  @apply mb-[1rem] text-justify
+}
+
+.article-content blockquote {
+  @apply p-[1rem] my-[1rem] border-l-4 border-dark-300
+}
+
+.article-content blockquote p {
+  @apply text-base italic font-medium leading-relaxed text-dark-500
+}
+
+.article-content h1 {
+  @apply text-xl mt-9 mb-6 font-bold
+}
+
+.article-content h2 {
+  @apply text-2xl mt-9 mb-6 font-bold
+}
+
+/** Table **/
+.table th, .table td {
+  padding: 0.25rem 0.5rem;
+}

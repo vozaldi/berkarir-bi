@@ -1,0 +1,55 @@
+.app-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 700;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &:not(.hidden) {
+    display: block;
+  }
+
+  .dark & {
+    background-color: rgba(0, 0, 0, 0.66);
+  }
+}
+
+.app-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
+.app-modal-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  pointer-events: none;
+
+  & > * {
+    pointer-events: auto;
+  }
+}
+
+.app-modal-card {
+  margin: 0 auto;
+  background-color: var(--app-card);
+  border: 1px solid var(--app-dark-300);
+  border-radius: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  .dark & {
+    border-color: var(--app-dark-200);
+  }
+}

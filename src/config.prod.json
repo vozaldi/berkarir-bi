@@ -1,0 +1,24 @@
+{
+  "name": "Berkarir ASN",
+  "displayName": "Berkarir ASN",
+  "company": "Berkarir ASN",
+
+  "STORAGE_ID": "@berkarir-asn",
+  "STORAGE_KEY": "@berkarir-asn.web",
+
+  "experiments": [],
+
+  "API_URL": "https://lms.pekade.my.id/api",
+  "NEXT_URL": "https://pejuang.berkarirasn.id/api",
+  "API_KEY": "LhNABrFoTeHPGYEKuqbwy2Ilg5Q+Ywd1uaAlNJ95FJ0=",
+  "API_TOKEN": "4|3obSGBTLyTrcBR1prSlUgPLJIBXNVjZza8SrHuxPb9cd976c",
+
+  "contact_phone": "08123456789",
+  "contact_email": "local@domain.com",
+
+  "url_whatsapp": "https://wa.me/",
+  "url_facebook": "https://line.com/",
+  "url_instagram": "https://instagram.com/moment2uofficial",
+  "url_youtube": "https://line.com/",
+  "url_tiktok": "https://instagram.com/moment2uofficial"
+}

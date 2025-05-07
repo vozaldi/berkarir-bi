@@ -1,0 +1,37 @@
+.primary-blue:root {
+    --app-primary: #0a82d8;
+}
+
+.primary-green:root {
+    --app-primary: #2cb44a;
+}
+
+.primary-orange:root {
+    --app-primary: #eda32d;
+}
+
+.primary-purple:root {
+    --app-primary: #8b5cf6;
+}
+
+.primary-viracun:root {
+    --app-primary: #ff006c;
+}
+
+.primary-alfaiz:root {
+    --app-primary: #930012;
+}
+
+.primary-jadiasn:root {
+    --app-primary: #356692;
+}
+
+.card {
+    background-color: var(--app-card);
+    border-radius: 1rem;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.12);
+}
+
+.card-body {
+    padding: 1rem;
+}

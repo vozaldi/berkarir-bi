@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --app-primary: #0a82d8;
+    --app-primary-dark: #074876;
+    /* --app-primary: #2cb44a; */
+    --app-secondary: #eda32d;
+    --app-card: #ffffff;
+    --app-background: #f8fafc;
+    --app-dark-50: #fefefe;
+    --app-dark-100: #fafafa;
+    --app-dark-200: #f3f3f3;
+    --app-dark-300: #dadada;
+    --app-dark-400: #bdbdbd;
+    --app-dark-500: #9e9e9e;
+    --app-dark-600: #888888;
+    --app-dark-700: #707070;
+    --app-dark-800: #5C5C5C;
+    --app-dark-900: #323232;
+    --app-dark-950: #212121;
+    --app-dark-text: #000000;
+}
+
+.dark:root {
+    --app-card: #323232;
+    --app-background: #121212;
+    --app-dark-50: #212121;
+    --app-dark-100: #323232;
+    --app-dark-200: #5C5C5C;
+    --app-dark-300: #707070;
+    --app-dark-400: #888888;
+    --app-dark-500: #9e9e9e;
+    --app-dark-600: #bdbdbd;
+    --app-dark-700: #dadada;
+    --app-dark-800: #f3f3f3;
+    --app-dark-900: #fafafa;
+    --app-dark-950: #fefefe;
+    --app-dark-text: #ffffff;
+}
+
+@theme inline {
+    /* Fonts */
+    --font-sans: var(--font-app-sans), "Lato", sans-serif;
+    --font-serif: var(--font-app-serif), var(--font-app-sans), "Lato", serif;
+
+    /* Colors */
+    --color-primary: var(--app-primary);
+    --color-primary-dark: var(--app-primary-dark);
+    --color-secondary: var(--app-secondary);
+    --color-card: var(--app-card);
+    --color-background: var(--app-background);
+    --color-dark-50: var(--app-dark-50);
+    --color-dark-100: var(--app-dark-100);
+    --color-dark-200: var(--app-dark-200);
+    --color-dark-300: var(--app-dark-300);
+    --color-dark-400: var(--app-dark-400);
+    --color-dark-500: var(--app-dark-500);
+    --color-dark-600: var(--app-dark-600);
+    --color-dark-700: var(--app-dark-700);
+    --color-dark-800: var(--app-dark-800);
+    --color-dark-900: var(--app-dark-900);
+    --color-dark-950: var(--app-dark-950);
+    --color-dark-text: var(--app-dark-text);
+}
