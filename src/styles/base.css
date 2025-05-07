@@ -3,10 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-    --app-primary: #0a82d8;
-    --app-primary-dark: #074876;
-    /* --app-primary: #2cb44a; */
-    --app-secondary: #eda32d;
+    --app-primary: #275592;
+    --app-primary-dark: #275592;
+    --app-secondary: #16243B;
     --app-card: #ffffff;
     --app-background: #f8fafc;
     --app-dark-50: #fefefe;

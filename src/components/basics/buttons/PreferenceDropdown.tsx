@@ -26,7 +26,7 @@ function PreferenceDropdown({
   });
 
   // States
-  const [primaryColor, setPrimaryColor] = useState('primary-blue');
+  const [primaryColor, setPrimaryColor] = useState('primary-bi');
   
   // Effects
   useEffect(() => {
@@ -60,7 +60,7 @@ function PreferenceDropdown({
     const color = custom?.replace('#', '');
 
     if (color) {
-      var style = document.createElement('style');
+      const style = document.createElement('style');
   
       style.textContent = `.primary-${color}:root { --app-primary: #${color}; }`;
 
@@ -145,6 +145,10 @@ function PreferenceDropdown({
               label: `Ungu`,
               value: 'primary-purple',
               color: '#8b5cf6',
+            }, {
+              label: `BerkarirBI`,
+              value: 'primary-bi',
+              color: '#275592',
             }, {
               label: `Viracun`,
               value: 'primary-viracun',
