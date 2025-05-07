@@ -1,0 +1,8 @@
+services:
+  berkarir-bi-multi-env-development:
+    build:
+      context: ../../
+      dockerfile: docker/development/Dockerfile
+    image: berkarir-bi-multi-env-development
+    ports:
+      - "3001:3000"
