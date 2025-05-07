@@ -48,6 +48,7 @@ function PolarRoleStatistic({
         title: { show: false },
         legend: { show: false },
         radar: {
+          center: ['50%', '55%'],
           indicator: [
             { name: `Pengetahuan Umum`, min: 0, max: 100 },
             { name: `Politis`, min: 0, max: 100 },

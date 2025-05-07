@@ -21,7 +21,7 @@ function AvatarProfile({
   return (
     <div className={clsx(['relative', className])} {...props}>
       <Image
-        className="-mt-4 mb-4 pointer-events-none"
+        className="-mt-4 mb-4 pointer-events-none max-h-full object-contain"
         src={'/assets/images/avatars/female/female-2.png'}
         alt="Avatar Female"
         width={512}

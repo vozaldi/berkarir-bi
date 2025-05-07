@@ -4,11 +4,12 @@ import DashboardMenu from "@/components/pages/account/dashboard/DashboardMenu";
 import DashboardQuizTabs from "@/components/pages/account/dashboard/DashboardQuizTabs";
 import RoleStatistic from "@/components/pages/account/dashboard/RoleStatistic";
 import { httpServer } from "@/server/httpServer";
-import { QuizModel } from "@/types/models";
+import { QuizModel, UserModel } from "@/types/models";
 import Link from "next/link";
 import { IoArrowForward, IoBulb, IoDocumentTextOutline, IoFitness, IoListOutline, IoLockClosed } from "react-icons/io5";
 
 export default async function Account() {
+  const user = await httpServer('/profile').then<UserModel | null>((data) => data.data);
   const quizzes = await httpServer('/v1/quizzes').then((data) => {
     if (data.data) {
       const items: any[] = data.data;
@@ -33,7 +34,9 @@ export default async function Account() {
       <div className="lg:col-span-9 col-span-12 flex flex-col gap-y-4">
         <div className="flex items-end gap-4">
           <div className="flex-1">
-            <h2 className="text-2xl font-bold">{`Selamat Datang, User`}</h2>
+            <h2 className="text-2xl font-bold">
+              {`Selamat Datang, ${user?.name || "User"}`}
+            </h2>
             <p className="text-sm text-dark-700">
               {`Kamu sudah siap untuk memulai perjalananmu?`}
             </p>
@@ -63,8 +66,12 @@ export default async function Account() {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           <div className="col-span-2">
+            <DashboardQuizTabs quizzes={quizzes} />
+          </div>
+
+          <div className="col-span-1 flex flex-col gap-4">
             <DashboardCarousel
               images={[{
                 src: `/assets/images/banners/Slideshow-short-1.png`,
@@ -76,19 +83,9 @@ export default async function Account() {
                 className: '!rounded-xl',
               }]}
             />
-          </div>
 
-          <div className="col-span-2 flex">
             <RoleStatistic className="bg-card rounded-2xl shadow-md py-4" />
-          </div>
-        </div>
 
-        <div className="grid grid-cols-3 gap-4">
-          <div className="col-span-2">
-            <DashboardQuizTabs quizzes={quizzes} />
-          </div>
-
-          <div className="col-span-1">
             <div className="bg-card rounded-lg shadow-md px-3 pt-2 pb-4 flex flex-col">
               <h3 className="text-lg font-bold">
                 {`Statistik Akun`}

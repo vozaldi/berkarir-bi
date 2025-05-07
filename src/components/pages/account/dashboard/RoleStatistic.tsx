@@ -11,12 +11,12 @@ function RoleStatistic({
   ...props
 }: Props) {
   return (
-    <div className={clsx(['grid grid-cols-4 gap-2', className])} {...props}>
-      <div className="col-span-2 flex">
+    <div className={clsx(['flex flex-col gap-4', className])} {...props}>
+      <div className="h-[176px] flex">
         <PolarRoleStatistic className="flex-1" statistic={{}} />
       </div>
 
-      <div className="col-span-2 flex">
+      <div className="h-[176px] flex">
         <AvatarProfile className="px-4" />
       </div>
     </div>
