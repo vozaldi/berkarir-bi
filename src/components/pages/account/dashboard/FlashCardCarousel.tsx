@@ -64,7 +64,7 @@ function FlashCardCarousel({
       <Swiper
         className="w-full"
         slidesPerView={1}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 3000, reverseDirection: true }}
         centeredSlides
         loop
         effect="creative"

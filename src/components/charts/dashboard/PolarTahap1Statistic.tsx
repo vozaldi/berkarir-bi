@@ -21,7 +21,7 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
   statistic?: {};
 };
 
-function PolarRoleStatistic({
+function PolarTahap1Statistic({
   className,
   statistic,
   ...props
@@ -47,11 +47,9 @@ function PolarRoleStatistic({
         radar: {
           center: ['50%', '55%'],
           indicator: [
-            { name: `Kebanksentralan`, min: 0, max: 100 },
-            { name: `Pengetahuan Umum`, min: 0, max: 100 },
-            { name: `TBI Structure`, min: 0, max: 100 },
-            { name: `TBI Written Expression`, min: 0, max: 100 },
-            { name: `TBI Reading`, min: 0, max: 100 },
+            { name: `Verbal`, min: 0, max: 100 },
+            { name: `Figural`, min: 0, max: 100 },
+            { name: `Numerical`, min: 0, max: 100 },
           ].map((item) => ({ ...item, name: item.name.replace(' ', '\n') })),
           splitLine: {
             lineStyle: {
@@ -88,7 +86,7 @@ function PolarRoleStatistic({
 
   return (
     <div className={clsx(['relative flex flex-col', className])} {...props}>
-      <h3 className="text-base font-bold text-center">{`Performa Ksatria`}</h3>
+      <h3 className="text-base font-bold text-center">{`Tahap 1`}</h3>
 
       <div
         ref={chartDivRef}
@@ -98,4 +96,4 @@ function PolarRoleStatistic({
   );
 };
 
-export default PolarRoleStatistic;
+export default PolarTahap1Statistic;
