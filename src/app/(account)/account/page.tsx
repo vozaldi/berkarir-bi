@@ -2,6 +2,7 @@ import Badge from "@/components/basics/Badge";
 import DashboardCarousel from "@/components/pages/account/dashboard/DashboardCarousel";
 import DashboardMenu from "@/components/pages/account/dashboard/DashboardMenu";
 import DashboardQuizTabs from "@/components/pages/account/dashboard/DashboardQuizTabs";
+import FlashCardCarousel from "@/components/pages/account/dashboard/FlashCardCarousel";
 import RoleStatistic from "@/components/pages/account/dashboard/RoleStatistic";
 import { httpServer } from "@/server/httpServer";
 import { QuizModel, UserModel } from "@/types/models";
@@ -85,6 +86,18 @@ export default async function Account() {
             />
 
             <RoleStatistic className="bg-card rounded-2xl shadow-md py-4" />
+
+            <FlashCardCarousel
+              images={[{
+                src: `/assets/images/flash-cards/flash-card-1.png`,
+                alt: "Banner 1",
+                className: '!rounded-xl',
+              }, {
+                src: `/assets/images/flash-cards/flash-card-2.png`,
+                alt: "Banner 2",
+                className: '!rounded-xl',
+              }]}
+            />
 
             <div className="bg-card rounded-lg shadow-md px-3 pt-2 pb-4 flex flex-col">
               <h3 className="text-lg font-bold">
