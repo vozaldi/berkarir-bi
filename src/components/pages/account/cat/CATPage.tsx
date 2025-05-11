@@ -16,6 +16,7 @@ import CATAnswer from "./CATAnswer";
 import CATQuestionList, { CATQuestionListRef } from "./CATQuestionList";
 import { useIsMounted } from "@/lib/hooks";
 import CATFloatingAction from "./CATFloatingAction";
+import QuestionWrittenExpression from "./QuestionWrittenExpression";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   quiz: QuizModel;
@@ -34,7 +35,127 @@ export default function CATPage({
   quiz,
 }: Props) {
   // Props
-  const qs = quiz.questions || [];
+  // const qs = quiz.questions || [];
+  const qs: QuestionModel[] = [
+    {
+      id: 1,
+      quiz_id: 1,
+      category: "normal",
+      component: "normal",
+      question_text: "The scientist ? a new device ? patients ? their blood pressure ?",
+    
+      main_category: {
+        id: 1,
+        name: "normal",
+        code: "normal",
+        questions: [],
+      },
+      sub_category: {
+        id: 1,
+        name: "normal",
+      },
+      answers: [
+        { id: 1, answer_text: "have designed" },
+        { id: 2, answer_text: "that allows" },
+        { id: 3, answer_text: "to monitor" },
+        { id: 4, answer_text: "easily at home" },
+      ],
+    }, {
+      id: 2,
+      quiz_id: 1,
+      category: "normal",
+      component: "normal",
+      question_text: "The information ? by the research team ? six months ? before the results ?",
+    
+      main_category: {
+        id: 1,
+        name: "normal",
+        code: "normal",
+        questions: [],
+      },
+      sub_category: {
+        id: 1,
+        name: "normal",
+      },
+      answers: [
+        { id: 1, answer_text: "were collected" },
+        { id: 2, answer_text: "over a period of" },
+        { id: 3, answer_text: "and analyzed" },
+        { id: 4, answer_text: "were published" },
+      ],
+    }, {
+      id: 3,
+      quiz_id: 1,
+      category: "normal",
+      component: "normal",
+      question_text: "Each of the students ? to submit ? report ? ?",
+    
+      main_category: {
+        id: 1,
+        name: "normal",
+        code: "normal",
+        questions: [],
+      },
+      sub_category: {
+        id: 1,
+        name: "normal",
+      },
+      answers: [
+        { id: 1, answer_text: "are required" },
+        { id: 2, answer_text: "a copy of their" },
+        { id: 3, answer_text: "before the end of" },
+        { id: 4, answer_text: "the semester" },
+      ],
+    }, {
+      id: 4,
+      quiz_id: 1,
+      category: "normal",
+      component: "normal",
+      question_text: "The engineer ? the mechanism ? the device ? ?",
+    
+      main_category: {
+        id: 1,
+        name: "normal",
+        code: "normal",
+        questions: [],
+      },
+      sub_category: {
+        id: 1,
+        name: "normal",
+      },
+      answers: [
+        { id: 1, answer_text: "explained clearly" },
+        { id: 2, answer_text: "by which" },
+        { id: 3, answer_text: "was operating" },
+        { id: 4, answer_text: "under pressure conditions" },
+      ],
+    }, {
+      id: 5,
+      quiz_id: 1,
+      category: "normal",
+      component: "normal",
+      question_text: "The painting ? in the museum ? to be over 300 years old ? ?",
+    
+      main_category: {
+        id: 1,
+        name: "normal",
+        code: "normal",
+        questions: [],
+      },
+      sub_category: {
+        id: 1,
+        name: "normal",
+      },
+      answers: [
+        { id: 1, answer_text: "that hangs" },
+        { id: 2, answer_text: "are believed" },
+        { id: 3, answer_text: "and was restored" },
+        { id: 4, answer_text: "recently" },
+      ],
+    },
+    ...(quiz.questions || []),
+  ];
+
 
   // Hooks
   const router = useRouter();
@@ -272,6 +393,10 @@ export default function CATPage({
   const isDiscussion = !!discussion.modelsLoaded && isEnded;
   const answeredCount = Object.keys(answers).length;
 
+  const qText = qs[active]?.question_text;
+  const questionMarks = qText?.match(/\?/g) || [];
+  const questionCount = questionMarks.length;
+
   return (
     <>
       <div className="flex flex-1 lg:flex-row flex-col-reverse gap-6">
@@ -405,7 +530,11 @@ export default function CATPage({
                 <hr className="mt-4 border-dark-300" />
 
                 <div className="mt-4 text-lg">
-                  <p>{qs[active]?.question_text}</p>
+                  {questionCount >= 4 ? (
+                    <QuestionWrittenExpression question={qs[active]} />
+                  ) : (
+                    <p>{qs[active]?.question_text}</p>
+                  )}
 
                   <CATAnswer
                     className={clsx(["mt-4", isEnded && "pointer-events-none"])}
@@ -463,7 +592,7 @@ export default function CATPage({
           </div>
         </div>
 
-        <div className="xl:w-3/12 lg:w-4/12 flex flex-col gap-4 xl:gap-6">
+        <div className="xl:w-3/12 lg:w-4/12 lg:flex flex-col gap-4 xl:gap-6 hidden">
           {quiz.quiz_type?.key === 'tryout' && (
             <div className="bg-card rounded-xl shadow-md p-4">
               <Suspense>

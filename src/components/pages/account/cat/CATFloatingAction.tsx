@@ -38,7 +38,7 @@ function CATFloatingAction({
             {!isEnded && (
               <Button
                 className={clsx([
-                  "!py-1.5 !px-3 -my-2 !rounded-xl flex gap-1",
+                  "!rounded-xl flex gap-1 aspect-square xl:aspect-auto",
                   isMarked && "bg-orange-500 text-white hover:bg-orange-500/80 hover:text-white",
                   !isMarked && "bg-orange-500/15 hover:bg-orange-500/30 text-orange-500 ",
                 ])}
@@ -46,28 +46,30 @@ function CATFloatingAction({
               >
                 <IoBookmarkOutline />
 
-                <span>{isMarked ? `Soal Ditandai` : `Tandai Soal`}</span>
+                <span className="hidden xl:block">
+                  {isMarked ? `Soal Ditandai` : `Tandai Soal`}
+                </span>
               </Button>
             )}
 
             <Button
-              className="bg-red-500/15 hover:bg-red-500/30 text-red-500 flex gap-1 !py-1.5 !rounded-xl"
+              className="bg-red-500/15 hover:bg-red-500/30 text-red-500 flex gap-1 !py-1.5 !rounded-xl aspect-square xl:aspect-auto"
               onClick={onLaporkanClick}
             >
               <IoFlagOutline />
 
-              <span>{`Laporkan Soal`}</span>
+              <span className="hidden xl:block">{`Laporkan Soal`}</span>
             </Button>
           </div>
 
           <div className="bg-card p-1.5 flex gap-6 items-center rounded-2xl border border-dark-300 dark:border-dark-500/30 pointer-events-auto shadow-sm">
             <Button
-              className="flex gap-1 !py-1.5 !rounded-xl"
+              className="flex gap-1 !py-1.5 !rounded-xl aspect-square xl:aspect-auto"
               color="primary"
               onClick={() => onNavigateClick?.('prev')}
             >
-              <IoChevronBack className="-ml-1" />
-              <span>{`Sebelumnya`}</span>
+              <IoChevronBack className="lg:-ml-1" />
+              <span className="hidden xl:block">{`Sebelumnya`}</span>
             </Button>
 
             <div className="flex items-center gap-2">
@@ -77,17 +79,17 @@ function CATFloatingAction({
             </div>
 
             <Button
-              className="flex gap-1 !py-1.5 !rounded-xl"
+              className="flex gap-1 !py-1.5 !rounded-xl aspect-square xl:aspect-auto"
               color="primary"
               onClick={() => onNavigateClick?.('next')}
             >
-              <span>{`Selanjutnya`}</span>
-              <IoChevronForward className="-mr-1" />
+              <span className="hidden xl:block">{`Selanjutnya`}</span>
+              <IoChevronForward className="lg:-mr-1" />
             </Button>
           </div>
         </div>
 
-        <div className="w-3/12 pointer-events-auto">
+        <div className="xl:w-3/12 lg:w-4/12 pointer-events-auto hidden md:block">
           {!isEnded && (
             <Button
               className="w-full bg-orange-500/15 hover:bg-orange-500/30 text-orange-500 flex gap-1 !rounded-xl"
