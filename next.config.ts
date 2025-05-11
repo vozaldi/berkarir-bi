@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       }, {
         protocol: 'https',
+        hostname: 'berkarir-bi.vercel.app',
+        port: '',
+        pathname: '/**',
+      }, {
+        protocol: 'https',
         hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
