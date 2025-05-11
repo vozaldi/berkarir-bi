@@ -1,10 +1,10 @@
 {
-  "name": "Berkarir ASN",
-  "displayName": "Berkarir ASN",
-  "company": "Berkarir ASN",
+  "name": "Berkarir BI",
+  "displayName": "Berkarir BI",
+  "company": "Berkarir BI",
 
-  "STORAGE_ID": "@berkarir-asn",
-  "STORAGE_KEY": "@berkarir-asn.web",
+  "STORAGE_ID": "@berkarir-bi",
+  "STORAGE_KEY": "@berkarir-bi.web",
 
   "experiments": [],
 
