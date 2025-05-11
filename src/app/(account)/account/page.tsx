@@ -85,7 +85,7 @@ export default async function Account() {
               }]}
             />
 
-            <RoleStatistic className="bg-card rounded-2xl shadow-md py-4" />
+            <RoleStatistic className="bg-card rounded-2xl shadow-md pt-3 pb-4" />
 
             <FlashCardCarousel
               images={[{

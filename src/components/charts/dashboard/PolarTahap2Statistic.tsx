@@ -21,7 +21,7 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
   statistic?: {};
 };
 
-function PolarRoleStatistic({
+function PolarTahap1Statistic({
   className,
   statistic,
   ...props
@@ -88,8 +88,6 @@ function PolarRoleStatistic({
 
   return (
     <div className={clsx(['relative flex flex-col', className])} {...props}>
-      <h3 className="text-base font-bold text-center">{`Performa Ksatria`}</h3>
-
       <div
         ref={chartDivRef}
         className="mt-2 flex-1"
@@ -98,4 +96,4 @@ function PolarRoleStatistic({
   );
 };
 
-export default PolarRoleStatistic;
+export default PolarTahap1Statistic;

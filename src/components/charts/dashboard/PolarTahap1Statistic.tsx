@@ -86,8 +86,6 @@ function PolarTahap1Statistic({
 
   return (
     <div className={clsx(['relative flex flex-col', className])} {...props}>
-      <h3 className="text-base font-bold text-center">{`Tahap 1`}</h3>
-
       <div
         ref={chartDivRef}
         className="mt-2 flex-1"
