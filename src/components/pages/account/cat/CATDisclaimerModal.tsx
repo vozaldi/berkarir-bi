@@ -52,14 +52,12 @@ function CATDisclaimerModal({
 
         <div className="flex justify-center gap-x-4 mt-4">
           <Button
-            className="text-primary border border-primary"
-            size={'sm'}
+            className="text-primary border border-primary hover:bg-dark-500/10"
             onClick={() => props.onHide?.()}
           >{`Batal`}</Button>
 
           <Button
             className="min-w-[80px]"
-            size={'sm'}
             color="primary"
             onClick={handleSubmit}
           >{`Mulai Sekarang`}</Button>

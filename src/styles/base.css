@@ -23,6 +23,7 @@
 }
 
 .dark:root {
+    --app-primary-dark: #4C8FEA;
     --app-card: #323232;
     --app-background: #121212;
     --app-dark-50: #212121;
