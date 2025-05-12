@@ -7,12 +7,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'pejuang.berkarirasn.id',
-        port: '',
-        pathname: '/**',
-      }, {
-        protocol: 'https',
-        hostname: 'berkarir-bi.vercel.app',
+        hostname: 'pejuang.berkarirbi.id',
         port: '',
         pathname: '/**',
       }, {
