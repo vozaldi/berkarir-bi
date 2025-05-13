@@ -28,15 +28,16 @@ export default async function Account() {
 
   return (
     <section className="container px-4 mx-auto pt-6 pb-8 grid grid-cols-12 gap-6">
-      <div className="lg:col-span-3 col-span-12">
+      <div className="lg:col-span-3 col-span-12 xl:block hidden">
         <DashboardMenu className="sticky top-24" />
       </div>
 
-      <div className="lg:col-span-9 col-span-12 flex flex-col gap-y-4">
-        <div className="flex items-end gap-4">
+      <div className="xl:col-span-9 col-span-12 flex flex-col gap-y-4">
+        <div className="flex lg:flex-row flex-col lg:items-end items-start gap-4">
           <div className="flex-1">
-            <h2 className="text-2xl font-bold">
-              {`Selamat Datang, ${user?.name || "User"}`}
+            <h2 className="text-2xl font-bold flex flex-wrap gap-x-1 -gap-y-1">
+              <span>{`Selamat Datang,`}</span>
+              <span>{`${user?.name || "User"}`}</span>
             </h2>
             <p className="text-sm text-dark-700">
               {`Kamu sudah siap untuk memulai perjalananmu?`}
@@ -68,11 +69,11 @@ export default async function Account() {
         </div>
 
         <div className="grid grid-cols-3 gap-4">
-          <div className="col-span-2">
+          <div className="lg:col-span-2 col-span-3">
             <DashboardQuizTabs quizzes={quizzes} />
           </div>
 
-          <div className="col-span-1 flex flex-col gap-4">
+          <div className="lg:col-span-1 col-span-3 flex flex-col gap-4">
             <DashboardCarousel
               images={[{
                 src: `/assets/images/banners/Slideshow-short-1.png`,
