@@ -37,6 +37,7 @@ export default function Tahap1SubtestList({
           title: "Subtes 2",
           question: 10,
           minute: 10,
+          lottieClassName: "h-[220px]",
           lottie: lottie_numeric,
           lottieBackground: true,
         }, {

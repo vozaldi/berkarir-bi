@@ -5,23 +5,33 @@ import Modal, { ModalProps } from "@/components/basics/Modal";
 import { QuizModel } from "@/types/models";
 import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 type Props = ModalProps & {
   quiz?: QuizModel | null;
+  tahap?: number;
 };
 
 function CATDisclaimerModal({
   quiz,
+  tahap,
   ...props
 }: Props) {
   // Hooks
   const router = useRouter();
 
+  // States
+  const [isLoading, setIsLoading] = useState(false);
+
   // Handlers
   const handleSubmit = () => {
     const date = dayjs().add(90, 'minute').format('YYYY-MM-DD HH:mm:ss');
 
-    if (quiz?.quiz_type?.key === 'practice') {
+    setIsLoading(true);
+
+    if (tahap === 1) {
+      return router.push(`/paket/${quiz?.id}/tahap-1`);
+    } else if (quiz?.quiz_type?.key === 'practice') {
       return router.push(`/account/latihan-soal/${quiz?.id}?end=${date}`);
     }
 
@@ -60,6 +70,7 @@ function CATDisclaimerModal({
             className="min-w-[80px]"
             color="primary"
             onClick={handleSubmit}
+            loading={isLoading}
           >{`Mulai Sekarang`}</Button>
         </div>
       </Modal.ModalCard>
