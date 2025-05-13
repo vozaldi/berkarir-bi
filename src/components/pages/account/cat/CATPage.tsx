@@ -363,7 +363,7 @@ export default function CATPage({
                 <div className="flex justify-between pt-2 pb-3 gap-2">
                   <Button
                     type="link"
-                    href={'/account'}
+                    href={'/dashboard'}
                     className="!rounded-full"
                     color="primary"
                     size="sm"

@@ -45,7 +45,7 @@ function HeaderNavPublic({
       {...props}
     >
       <div className="container px-4 py-2 md:py-4 mx-auto flex justify-between items-center">
-        <Link href={isLoggedIn ? '/account' : "/"}>
+        <Link href={isLoggedIn ? '/dashboard' : "/"}>
           {theme === 'dark' ? (
             <Image
               src={'/assets/images/app-logo-white.png'}
@@ -75,7 +75,7 @@ function HeaderNavPublic({
           {isLoggedIn ? (
             <li>
               <Link
-                href={'/account'}
+                href={'/dashboard'}
                 className="flex text-lg items-center hover:text-primary px-2 py-2"
               >
                 <IoPersonCircleOutline size={32} />

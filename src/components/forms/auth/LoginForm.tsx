@@ -48,7 +48,7 @@ function LoginForm({
   useEffect(() => {
     if (isFinished) {
       setTimeout(() => {
-        router.push('/account');
+        router.push('/dashboard');
       }, 1000);
     }
   }, [isFinished, router]);

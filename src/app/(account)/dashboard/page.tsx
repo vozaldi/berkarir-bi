@@ -87,17 +87,32 @@ export default async function Account() {
 
             <RoleStatistic className="bg-card rounded-2xl shadow-md pt-3 pb-4" />
 
-            <FlashCardCarousel
-              images={[{
-                src: `/assets/images/flash-cards/flash-card-1.png`,
-                alt: "Banner 1",
-                className: '!rounded-xl',
-              }, {
-                src: `/assets/images/flash-cards/flash-card-2.png`,
-                alt: "Banner 2",
-                className: '!rounded-xl',
-              }]}
-            />
+            <div className="overflow-hidden px-8 -mx-4">
+              <div className="-mx-4 pb-2">
+                <h3 className="font-bold text-lg">{`Flash Cards`}</h3>
+                <p className="text-sm opacity-75 -mt-1">{`Yuk, tingkatkan wawasan kamu!`}</p>
+              </div>
+
+              <FlashCardCarousel
+                images={[{
+                  src: `/assets/images/flash-cards/1.png`,
+                  alt: "Banner 1",
+                  className: '!rounded-xl',
+                }, {
+                  src: `/assets/images/flash-cards/2.png`,
+                  alt: "Banner 2",
+                  className: '!rounded-xl',
+                }, {
+                  src: `/assets/images/flash-cards/3.png`,
+                  alt: "Banner 3",
+                  className: '!rounded-xl',
+                }, {
+                  src: `/assets/images/flash-cards/4.png`,
+                  alt: "Banner 4",
+                  className: '!rounded-xl',
+                }]}
+              />
+            </div>
 
             <div className="bg-card rounded-lg shadow-md px-3 pt-2 pb-4 flex flex-col">
               <h3 className="text-lg font-bold">

@@ -4,8 +4,8 @@ import clsx from "clsx";
 import NextImage, { ImageProps } from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/effect-creative';
-import { EffectCreative } from 'swiper/modules';
+import 'swiper/css/effect-cards';
+import { EffectCards } from 'swiper/modules';
 import { useEffect, useState } from "react";
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
@@ -67,18 +67,8 @@ function FlashCardCarousel({
         autoplay={{ delay: 3000, reverseDirection: true }}
         centeredSlides
         loop
-        effect="creative"
-        modules={[EffectCreative]}
-        creativeEffect={{
-          prev: {
-            shadow: false,
-            translate: ['-120%', 0, -500],
-          },
-          next: {
-            shadow: false,
-            translate: ['120%', 0, -500],
-          },
-        }}
+        effect="cards"
+        modules={[EffectCards]}
       >
         {images.map((item, index) => {
           const { src, alt, ...imgProps } = item;

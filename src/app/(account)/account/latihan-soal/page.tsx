@@ -1,11 +1,7 @@
-import Button from "@/components/basics/buttons/Button";
 import PaketSaya from "@/components/pages/account/cat/PaketSaya";
 import DashboardMenu from "@/components/pages/account/dashboard/DashboardMenu";
-import LogoutButton from "@/components/pages/account/LogoutButton";
 import { httpServer } from "@/server/httpServer";
 import { QuizModel } from "@/types/models";
-import Image from "next/image";
-import { IoDocumentTextOutline, IoFileTrayFullOutline, IoHomeOutline, IoPersonOutline } from "react-icons/io5";
 
 export default async function Account() {
   const quizzes = await httpServer('/v1/quizzes').then((data) => {

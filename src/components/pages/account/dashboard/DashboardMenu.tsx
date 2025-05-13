@@ -41,7 +41,7 @@ function DashboardMenu({
           {[{
             Icon: IoHomeOutline,
             label: `Dashboard`,
-            href: '/account',
+            href: '/dashboard',
           }, {
             Icon: IoDocumentTextOutline,
             label: `Latihan Soal`,
