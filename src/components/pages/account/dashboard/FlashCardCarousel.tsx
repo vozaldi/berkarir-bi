@@ -69,6 +69,7 @@ function FlashCardCarousel({
         loop
         effect="cards"
         modules={[EffectCards]}
+        cardsEffect={{ slideShadows: false }}
       >
         {images.map((item, index) => {
           const { src, alt, ...imgProps } = item;
