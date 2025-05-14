@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { FaSquareFacebook } from "react-icons/fa6";
-import { IoCall, IoLogoInstagram, IoLogoWhatsapp, IoMail } from "react-icons/io5";
+import { IoCall, IoLogoInstagram, IoLogoTiktok, IoLogoWhatsapp, IoMail } from "react-icons/io5";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   
@@ -59,13 +59,18 @@ function FooterPublic({
                     link: '#whatsapp',
                     Icon: IoLogoWhatsapp,
                   }, {
-                    link: '#facebook',
-                    Icon: FaSquareFacebook,
-                  }, {
-                    link: '#instagram',
+                    link: appConfig('url_instagram'),
                     Icon: IoLogoInstagram,
+                  }, {
+                    link: appConfig('url_tiktok'),
+                    Icon: IoLogoTiktok,
                   }].map((item) => (
-                    <Link href={item.link} key={item.link} className="hover:opacity-75">
+                    <Link
+                      key={item.link}
+                      href={item.link}
+                      target="_blank"
+                      className="hover:opacity-75"
+                    >
                       <item.Icon size={24} />
                     </Link>
                   ))}
