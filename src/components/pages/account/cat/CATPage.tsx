@@ -4,17 +4,15 @@ import Button from "@/components/basics/buttons/Button";
 import Modal from "@/components/basics/Modal";
 import ToastMessage from "@/components/basics/ToastMessage";
 import LaporkanSoalForm from "@/components/forms/account/cat/LaporkanSoalForm";
-import TandaiSoal from "@/components/pages/account/cat/TandaiSoal";
 import TimerCAT from "@/components/pages/account/cat/TimerCAT";
 import httpService from "@/lib/utilities/httpService";
 import { AnswerModel, AttemptModel, QuestionDiscussion, QuestionMainCategory, QuestionModel, QuizModel } from "@/types/models";
 import clsx from "clsx";
 import dayjs from "dayjs";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CATAnswer from "./CATAnswer";
 import CATQuestionList, { CATQuestionListRef } from "./CATQuestionList";
-import { useIsMounted } from "@/lib/hooks";
 import CATFloatingAction from "./CATFloatingAction";
 import QuestionWrittenExpression from "./QuestionWrittenExpression";
 
@@ -474,14 +472,12 @@ export default function CATPage({
         <div className="xl:w-3/12 lg:w-4/12 lg:flex flex-col gap-4 xl:gap-6 hidden">
           {quiz.quiz_type?.key === 'tryout' && (
             <div className="bg-card rounded-xl shadow-md p-4">
-              <Suspense>
-                <TimerCAT
-                  className="mt-1"
-                  onTimerEnd={() => handleEndSesion(true)}
-                  onDateChange={(date) => setDate(date)}
-                  isEnded={isEnded}
-                />
-              </Suspense>
+              <TimerCAT
+                className="mt-1"
+                onTimerEnd={() => handleEndSesion(true)}
+                onDateChange={(date) => setDate(date)}
+                isEnded={isEnded}
+              />
             </div>
           )}
 
