@@ -6,8 +6,8 @@ import * as lottie_verbal from "@/assets/lotties/paket/paket-verbal.json";
 import * as lottie_numeric from "@/assets/lotties/paket/paket-numeric.json";
 import * as lottie_figural from "@/assets/lotties/paket/paket-figural.json";
 import Tahap1SubtestItem from "./Tahap1SubtestItem";
-import CATDisclaimerModal from "@/components/pages/account/cat/CATDisclaimerModal";
 import { useState } from "react";
+import Tahap1Disclaimer from "./Tahap1Disclaimer";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   quiz: QuizModel;
@@ -19,7 +19,7 @@ export default function Tahap1SubtestList({
   ...props
 }: Props) {
   // States
-  const [catModel, setCatModel] = useState<QuizModel | null>(null);
+  const [subtest, setSubtest] = useState<string | null>(null);
 
   return (
     <div className={clsx(["grid grid-cols-12 gap-6", className])} {...props}>
@@ -53,15 +53,16 @@ export default function Tahap1SubtestList({
         <div key={item.category} className="col-span-4">
           <Tahap1SubtestItem
             subtest={item}
-            onMulaiClick={(subtest) => setCatModel(subtest)}
+            onMulaiClick={(subtest) => setSubtest(subtest.category || null)}
           />
         </div>
       ))}
 
-      <CATDisclaimerModal
-        isVisible={!!catModel}
-        onHide={() => setCatModel(null)}
+      <Tahap1Disclaimer
+        isVisible={!!subtest}
+        onHide={() => setSubtest(null)}
         quiz={quiz}
+        subtest={subtest || undefined}
       />
     </div>
   );

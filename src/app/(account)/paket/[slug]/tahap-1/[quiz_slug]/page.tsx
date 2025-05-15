@@ -7,10 +7,10 @@ import { Suspense } from "react";
 export default async function PaketDetailCAT({
   params,
 }: {
-  params: Promise<{ quiz_slug: string }>
+  params: Promise<{ slug: string; quiz_slug: string; }>
 }) {
-  const { quiz_slug } = await params;
-  const quiz = await httpServer(`/v1/quizzes/${quiz_slug}`)
+  const { slug } = await params;
+  const quiz = await httpServer(`/v1/quizzes/${slug}`)
     .then((data): QuizModel => {
       if (data.data) {
         return data.data;
@@ -18,21 +18,21 @@ export default async function PaketDetailCAT({
 
       throw data;
     }).catch((err) => null);
-  const questions = await httpServer(`/v1/quizzes/${quiz_slug}/questions`)
+  const questions = await httpServer(`/v1/quizzes/${slug}/questions`)
     .then((data) => {
       if (data.data) {
         const items: any[] = data.data;
         const models: QuestionModel[] = items.map((item): QuestionModel => {
           return { ...item };
         });
-  
+
         return models;
       }
 
       throw data;
     }).catch((): QuestionModel[] => []);
 
-  await httpServer(`/v1/quizzes/${quiz_slug}/start`, {
+  await httpServer(`/v1/quizzes/${slug}/start`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
