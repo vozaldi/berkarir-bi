@@ -7,7 +7,7 @@ import { Suspense } from "react";
 export default async function PaketDetailCAT({
   params,
 }: {
-  params: Promise<{ slug: string; quiz_slug: string; }>
+  params: Promise<{ slug: string; subtest: string; }>
 }) {
   const { slug } = await params;
   const quiz = await httpServer(`/v1/quizzes/${slug}`)
