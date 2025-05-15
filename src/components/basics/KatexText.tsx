@@ -6,18 +6,18 @@ import { useEffect, useState } from "react";
 import "katex/dist/katex.min.css";
 
 type Props = Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> & {
-  children: string;
+  children?: string;
   katexOptions?: Partial<KatexOptions>;
 };
 
 function KatexText({
   className,
-  children,
+  children = '',
   katexOptions,
   ...props
 }: Props) {
   // States
-  const [output, setOutput] = useState('');
+  const [output, setOutput] = useState<string | null>(null);
 
   // Effects
   useEffect(() => {
@@ -30,7 +30,7 @@ function KatexText({
     setOutput(output);
   }, [children, katexOptions]);
 
-  return (
+  return null === output ? null : (
     <div
       className={clsx(['katex-content max-w-full', className])}
       dangerouslySetInnerHTML={{ __html: output }}

@@ -3,13 +3,15 @@ import { httpServer } from "@/server/httpServer";
 import { QuestionModel, QuizModel } from "@/types/models";
 import clsx from "clsx";
 import { Suspense } from "react";
+import * as questions_tahap_1_numeric from "@/assets/questions/tahap-1-numeric.json";
+import * as questions_tahap_2_we from "@/assets/questions/tahap-2-written-expression.json";
 
 export default async function PaketDetailCAT({
   params,
 }: {
   params: Promise<{ slug: string; subtest: string; }>
 }) {
-  const { slug } = await params;
+  const { slug, subtest } = await params;
   const quiz = await httpServer(`/v1/quizzes/${slug}`)
     .then((data): QuizModel => {
       if (data.data) {
@@ -25,6 +27,18 @@ export default async function PaketDetailCAT({
         const models: QuestionModel[] = items.map((item): QuestionModel => {
           return { ...item };
         });
+
+        if (subtest === 'numeric') {
+          questions_tahap_1_numeric.reverse().forEach((item) => {
+            models.unshift(item);
+          });
+        }
+
+        if (subtest === 'verbal') {
+          questions_tahap_2_we.reverse().forEach((item) => {
+            models.unshift(item);
+          });
+        }
 
         return models;
       }

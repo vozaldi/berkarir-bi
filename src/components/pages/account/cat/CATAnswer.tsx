@@ -1,3 +1,4 @@
+import AutodetectText from "@/components/basics/AutodetectText";
 import { AnswerModel, QuestionModel } from "@/types/models";
 import clsx from "clsx";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
@@ -39,7 +40,9 @@ function CATAnswer({
             <input key={item.id} type="radio" value={index} name="answer" className="w-4 h-4 hidden" />
 
             <p className="font-bold self-start">{['A', 'B', 'C', 'D', 'E'][index]}.</p>
-            <p className={clsx([isCorrect && 'flex-1'])}>{item.answer_text}</p>
+            <AutodetectText
+              className={clsx([isCorrect && 'flex-1'])}
+            >{item.answer_text}</AutodetectText>
 
             {isCorrect && (
               <IoCheckmarkCircleOutline size={24} className="self-start" />

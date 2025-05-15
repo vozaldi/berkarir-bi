@@ -1,0 +1,172 @@
+[
+    {
+        "id": 1111,
+        "quiz_id": 9,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "The scientist ? a new device ? patients ? their blood pressure ?",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 1721,
+                "answer_text": "have designed"
+            },
+            {
+                "id": 1722,
+                "answer_text": "that allows"
+            },
+            {
+                "id": 1723,
+                "answer_text": "to monitor"
+            },
+            {
+                "id": 1724,
+                "answer_text": "easily at home"
+            }
+        ]
+    },
+    {
+        "id": 1112,
+        "quiz_id": 9,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "The information ? by the research team ? six months ? before the results ?",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 2721,
+                "answer_text": "were collected"
+            },
+            {
+                "id": 2722,
+                "answer_text": "over a period of"
+            },
+            {
+                "id": 2723,
+                "answer_text": "and analyzed"
+            },
+            {
+                "id": 2724,
+                "answer_text": "were published"
+            }
+        ]
+    },
+    {
+        "id": 1113,
+        "quiz_id": 9,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "Each of the students ? to submit ? report ? ?",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 3721,
+                "answer_text": "are required"
+            },
+            {
+                "id": 3722,
+                "answer_text": "a copy of their"
+            },
+            {
+                "id": 3723,
+                "answer_text": "before the end of"
+            },
+            {
+                "id": 3724,
+                "answer_text": "the semester"
+            }
+        ]
+    },
+    {
+        "id": 1114,
+        "quiz_id": 9,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "The engineer ? the mechanism ? the device ? ?",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 4721,
+                "answer_text": "explained clearly"
+            },
+            {
+                "id": 4722,
+                "answer_text": "by which"
+            },
+            {
+                "id": 4723,
+                "answer_text": "was operating"
+            },
+            {
+                "id": 4724,
+                "answer_text": "under pressure conditions"
+            }
+        ]
+    },
+    {
+        "id": 1115,
+        "quiz_id": 9,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "The painting ? in the museum ? to be over 300 years old ? ?",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 5721,
+                "answer_text": "that hangs"
+            },
+            {
+                "id": 5722,
+                "answer_text": "are believed"
+            },
+            {
+                "id": 5723,
+                "answer_text": "and was restored"
+            },
+            {
+                "id": 5724,
+                "answer_text": "recently"
+            }
+        ]
+    }
+]

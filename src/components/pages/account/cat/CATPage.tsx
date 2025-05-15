@@ -15,6 +15,7 @@ import CATAnswer from "./CATAnswer";
 import CATQuestionList, { CATQuestionListRef } from "./CATQuestionList";
 import CATFloatingAction from "./CATFloatingAction";
 import QuestionWrittenExpression from "./QuestionWrittenExpression";
+import AutodetectText from "@/components/basics/AutodetectText";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   quiz: QuizModel;
@@ -410,7 +411,7 @@ export default function CATPage({
                   {questionCount >= 4 ? (
                     <QuestionWrittenExpression question={qs[active]} />
                   ) : (
-                    <p>{qs[active]?.question_text}</p>
+                    <AutodetectText>{qs[active].question_text}</AutodetectText>
                   )}
 
                   <CATAnswer

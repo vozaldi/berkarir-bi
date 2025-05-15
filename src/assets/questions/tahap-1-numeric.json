@@ -1,0 +1,192 @@
+[
+    {
+        "id": 1111,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "$9.8 + \\frac{6}{10} - 4.4 + \\frac{8}{5} - 3.8 =$",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "answers": [
+            {
+                "id": 1721,
+                "answer_text": "$\\frac{8}{5}$"
+            },
+            {
+                "id": 1722,
+                "answer_text": "$\\frac{3}{5}$"
+            },
+            {
+                "id": 1723,
+                "answer_text": "$\\frac{49}{5}$"
+            },
+            {
+                "id": 1724,
+                "answer_text": "$\\frac{22}{5}$"
+            },
+            {
+                "id": 1725,
+                "answer_text": "$\\frac{19}{5}$"
+            }
+        ]
+    },
+    {
+        "id": 1112,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "$4.5 + \\frac{3}{4} \\times 8 - 2.75 =$",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "answers": [
+            {
+                "id": 2721,
+                "answer_text": "$\\frac{29}{4}$"
+            },
+            {
+                "id": 2722,
+                "answer_text": "$\\frac{21}{2}$"
+            },
+            {
+                "id": 2723,
+                "answer_text": "$\\frac{31}{4}$"
+            },
+            {
+                "id": 2724,
+                "answer_text": "$\\frac{19}{4}$"
+            },
+            {
+                "id": 2725,
+                "answer_text": "$\\frac{35}{4}$"
+            }
+        ]
+    },
+    {
+        "id": 1113,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "$6.8 \\div 1.7 + 2\\frac{2}{3} - 1.5 =$",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "answers": [
+            {
+                "id": 3721,
+                "answer_text": "12,17"
+            },
+            {
+                "id": 3722,
+                "answer_text": "10,67"
+            },
+            {
+                "id": 3723,
+                "answer_text": "6,67"
+            },
+            {
+                "id": 3724,
+                "answer_text": "9,17"
+            },
+            {
+                "id": 3725,
+                "answer_text": "7,97"
+            }
+        ]
+    },
+    {
+        "id": 1114,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "$4.5 - 30\\% + 2\\frac{1}{2} \\times \\frac{1}{4} =$",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "answers": [
+            {
+                "id": 4721,
+                "answer_text": "7,325"
+            },
+            {
+                "id": 4722,
+                "answer_text": "7,425"
+            },
+            {
+                "id": 4723,
+                "answer_text": "7,625"
+            },
+            {
+                "id": 4724,
+                "answer_text": "7,825"
+            },
+            {
+                "id": 4725,
+                "answer_text": "7,925"
+            }
+        ]
+    },
+    {
+        "id": 1115,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "$5.5 + \\frac{3}{4} - 2\\frac{1}{2} + 1.25 - \\frac{3}{4} =$",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "answers": [
+            {
+                "id": 5721,
+                "answer_text": "$\\frac{25}{4}$"
+            },
+            {
+                "id": 5722,
+                "answer_text": "$\\frac{11}{2}$"
+            },
+            {
+                "id": 5723,
+                "answer_text": "$\\frac{17}{4}$"
+            },
+            {
+                "id": 5724,
+                "answer_text": "$\\frac{21}{4}$"
+            },
+            {
+                "id": 5725,
+                "answer_text": "$6.05$"
+            }
+        ]
+    }
+]
