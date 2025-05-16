@@ -23,6 +23,7 @@ export type QuestionModel = {
   category?: string;
   component?: string;
   question_text?: string;
+  question_body?: string;
   image?: string;
 
   isLatex?: boolean;
@@ -70,6 +71,7 @@ export type QuestionDiscussion = {
   category?: string;
   component?: string;
   question_text?: string;
+  question_body?: string;
   explanation?: string;
   is_user_answer_correct?: boolean;
 

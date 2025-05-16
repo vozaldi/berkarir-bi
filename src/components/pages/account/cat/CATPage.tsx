@@ -16,6 +16,7 @@ import CATQuestionList, { CATQuestionListRef } from "./CATQuestionList";
 import CATFloatingAction from "./CATFloatingAction";
 import QuestionWrittenExpression from "./QuestionWrittenExpression";
 import AutodetectText from "@/components/basics/AutodetectText";
+import { useUiShallow } from "@/states/uiState";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   quiz: QuizModel;
@@ -39,6 +40,7 @@ export default function CATPage({
   // Hooks
   const router = useRouter();
   const params = useSearchParams();
+  const uiLayouts = useUiShallow(state => state.layouts);
 
   const questionListRef = useRef<CATQuestionListRef>(null);
 
@@ -407,22 +409,34 @@ export default function CATPage({
 
                 <hr className="mt-4 border-dark-300" />
 
-                <div className="mt-4 text-lg">
-                  {questionCount >= 4 ? (
-                    <QuestionWrittenExpression question={qs[active]} />
-                  ) : (
-                    <AutodetectText>{qs[active].question_text}</AutodetectText>
+                <div className="mt-4 flex flex-col md:flex-row md:gap-0 gap-6">
+                  {!!qs[active].question_body && (
+                    <div className="text-lg md:w-1/2 xl:mr-6 md:mr-4 border-dark-300 bg-dark-100 dark:bg-dark-200 rounded-xl p-4 inset-shadow-sm inset-shadow-black/25">
+                      <AutodetectText>{qs[active].question_body}</AutodetectText>
+                    </div>
                   )}
 
-                  <CATAnswer
-                    className={clsx(["mt-4", isEnded && "pointer-events-none"])}
-                    question={qs[active]}
-                    value={answers[active]}
-                    isCorrectCallback={(answer) => {
-                      return discussion.correctAnswers[active] === answer.id;
-                    }}
-                    onChange={(answer) => handleAnswer(qs[active], answer)}
-                  />
+                  <div className="md:flex-1 text-lg">
+                    <div className="sticky top-0" style={{ top: (uiLayouts.header?.height || 0) + 12 }}>
+                      {questionCount >= 4 ? (
+                        <QuestionWrittenExpression question={qs[active]} />
+                      ) : (
+                        <AutodetectText
+                          className={clsx([!!qs[active].question_body && "font-bold"])}
+                        >{qs[active].question_text}</AutodetectText>
+                      )}
+
+                      <CATAnswer
+                        className={clsx(["mt-4", isEnded && "pointer-events-none"])}
+                        question={qs[active]}
+                        value={answers[active]}
+                        isCorrectCallback={(answer) => {
+                          return discussion.correctAnswers[active] === answer.id;
+                        }}
+                        onChange={(answer) => handleAnswer(qs[active], answer)}
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 {isDiscussion && ((model: QuestionDiscussion) => {
@@ -470,30 +484,32 @@ export default function CATPage({
           </div>
         </div>
 
-        <div className="xl:w-3/12 lg:w-4/12 lg:flex flex-col gap-4 xl:gap-6 hidden">
-          {quiz.quiz_type?.key === 'tryout' && (
-            <div className="bg-card rounded-xl shadow-md p-4">
-              <TimerCAT
-                className="mt-1"
-                onTimerEnd={() => handleEndSesion(true)}
-                onDateChange={(date) => setDate(date)}
-                isEnded={isEnded}
-              />
-            </div>
-          )}
+        <div className="xl:w-3/12 lg:w-4/12 lg:block hidden">
+          <div className="sticky top-0 flex flex-col gap-4 xl:gap-6" style={{ top: (uiLayouts.header?.height || 0) + 8 }}>
+            {quiz.quiz_type?.key === 'tryout' && (
+              <div className="bg-card rounded-xl shadow-md p-4">
+                <TimerCAT
+                  className="mt-1"
+                  onTimerEnd={() => handleEndSesion(true)}
+                  onDateChange={(date) => setDate(date)}
+                  isEnded={isEnded}
+                />
+              </div>
+            )}
 
-          <CATQuestionList
-            ref={questionListRef}
-            className={clsx([
-              (isEnded && !isDiscussion) && "opacity-50 pointer-events-none",
-            ])}
-            questions={qs}
-            answers={answers}
-            correctAnswers={discussion.correctAnswers}
-            markedQuestionIds={markedQs}
-            isDiscussion={isDiscussion}
-            onPageChange={(page) => handleNavigateQuestion(page)}
-          />
+            <CATQuestionList
+              ref={questionListRef}
+              className={clsx([
+                (isEnded && !isDiscussion) && "opacity-50 pointer-events-none",
+              ])}
+              questions={qs}
+              answers={answers}
+              correctAnswers={discussion.correctAnswers}
+              markedQuestionIds={markedQs}
+              isDiscussion={isDiscussion}
+              onPageChange={(page) => handleNavigateQuestion(page)}
+            />
+          </div>
         </div>
       </div>
 
