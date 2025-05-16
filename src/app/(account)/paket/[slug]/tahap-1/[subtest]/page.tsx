@@ -29,13 +29,13 @@ export default async function PaketDetailCAT({
         });
 
         if (subtest === 'numeric') {
-          questions_tahap_1_numeric.reverse().forEach((item) => {
+          Array.from(questions_tahap_1_numeric).reverse().forEach((item) => {
             models.unshift(item);
           });
         }
 
         if (subtest === 'verbal') {
-          questions_tahap_2_we.reverse().forEach((item) => {
+          Array.from(questions_tahap_2_we).reverse().forEach((item) => {
             models.unshift(item);
           });
         }
