@@ -142,7 +142,7 @@ function TimerCAT({
           <div key={item.name} className={clsx([
             "relative p-2 flex-1 min-w-12 flex items-center justify-center",
           ])}>
-            <div className="py-1 px-2 -mt-1 bg-primary/50 rounded-xl backdrop-blur-lg backdrop-opacity-50">
+            <div className="py-1 px-2 -mt-1 bg-primary/50 rounded-xl backdrop-blur-lg backdrop-opacity-50 text-center">
               <p
                 className={clsx([
                   "relative text-3xl text-white font-bold",
