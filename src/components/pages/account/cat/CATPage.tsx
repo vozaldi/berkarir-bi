@@ -411,7 +411,7 @@ export default function CATPage({
 
                 <div className="mt-4 flex flex-col md:flex-row md:gap-0 gap-6">
                   {!!qs[active].question_body && (
-                    <div className="text-lg md:w-1/2 xl:mr-6 md:mr-4 border-dark-300 bg-dark-100 dark:bg-dark-200 rounded-xl p-4 inset-shadow-sm inset-shadow-black/25">
+                    <div className="text-lg md:w-1/2 xl:mr-6 md:mr-4 border-dark-300 bg-dark-100 dark:bg-dark-300/50 rounded-xl p-4 inset-shadow-sm inset-shadow-black/25">
                       <AutodetectText>{qs[active].question_body}</AutodetectText>
                     </div>
                   )}
