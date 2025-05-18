@@ -5,6 +5,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$9.8 + \\frac{6}{10} - 4.4 + \\frac{8}{5} - 3.8 =$",
+        "discussion": "$Konversi pecahan ke angka desimal:\n\n\\begin{itemize}\n\\item $\frac{6}{10} = 0.6$\n\t\\item $\\frac{8}{5} = 1.6$\n\\end{itemize}\n\nOperasi hitung:\n\\begin{align*}\n\t&= 9.8 + 0.6 - 4.4 + 1.6 - 3.8 \\\n&= 3.8\n\\end{align*}\n\nUbah ke pecahan:\n\\[\n\\frac{38}{10} = \\frac{19}{5}\n\\]$",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",
@@ -43,6 +44,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$4.5 + \\frac{3}{4} \\times 8 - 2.75 =$",
+        "discussion": "$\\textbf{Konversi pecahan ke angka desimal:}\n\\begin{itemize}\n    \\item $\\frac{6}{10} = 0{,}6$\n    \\item $\\frac{8}{5} = 1{,}6$\n\\end{itemize}\n\n\\textbf{Operasi hitung:}\n\n$9{,}8 + 0{,}6 - 4{,}4 + 1{,}6 - 3{,}8 = 3{,}8$\n\n\\textbf{Ubah ke pecahan:}\n\n$\\frac{38}{10} = \\frac{19}{5}$$",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",
@@ -81,6 +83,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$6.8 \\div 1.7 + 2\\frac{2}{3} - 1.5 =$",
+        "discussion": "$Konversi pecahan ke angka desimal:\n        \\frac{6}{10} = 0.6\n        \\frac{8}{5} = 1.6\n\n    Operasi hitung:\n    \\begin{align*}\n        &= 9.8 + 0.6 - 4.4 + 1.6 - 3.8 \\\\\n        &= 3.8\n    \\end{align*}\n\n\n    Ubah ke pecahan:\n    \\[\n    \\frac{38}{10} = \\frac{19}{5}\n    \\]$",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",
@@ -119,6 +122,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$4.5 - 30\\% + 2\\frac{1}{2} \\times \\frac{1}{4} =$",
+        "discussion": "$\\textbf{Konversi pecahan ke angka desimal:}\\\\\n\\bullet\\ \\dfrac{6}{10} = 0{,}6\\\\\n\\bullet\\ \\dfrac{8}{5} = 1{,}6\\\\[1em]\n\n\\textbf{Operasi hitung}\\\\\n\\quad =\\ 9{,}8 + 0{,}6 - 4{,}4 + 1{,}6 - 3{,}8\\\\\n\\quad =\\ 3{,}8\\\\[1em]\n\n\\textbf{Ubah ke pecahan}\\\\\n\\quad =\\ \\dfrac{38}{10} = \\dfrac{19}{5}$",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",
@@ -157,6 +161,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$5.5 + \\frac{3}{4} - 2\\frac{1}{2} + 1.25 - \\frac{3}{4} =$",
+        "discussion": "",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",
@@ -195,6 +200,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$7.25 - \\frac{2}{5} + 1\\frac{3}{5} - 4.5 + \\frac{4}{5} =$",
+        "discussion": "$\\textbf{Konversi ke pecahan biasa:}\n\\begin{itemize}\n    \\item $7.25 = 7\\frac{1}{4} = \\frac{29}{4}$\n    \\item $1\\frac{3}{5} = \\frac{8}{5}$\n    \\item $4.5 = \\frac{9}{2}$\n\\end{itemize}\n\n\\textbf{Lakukan operasi hitung:}\n\\begin{align*}\n\\frac{29}{4} - \\frac{2}{5} + \\frac{8}{5} - \\frac{9}{2} + \\frac{4}{5}\n&= \\frac{145}{20} - \\frac{8}{20} + \\frac{32}{20} - \\frac{90}{20} + \\frac{16}{20} \\\\\n&= \\frac{145 - 8 + 32 - 90 + 16}{20} \\\\\n&= \\frac{95}{20}\n\\end{align*}$",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",
@@ -232,6 +238,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$1{,}2 + \\frac{3}{4} - 2{,}5 + 6\\frac{2}{3} - \\frac{5}{6} =$",
+        "discussion": "",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",
@@ -269,6 +276,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$5{,}75 + 2{,}5 - 1{,}25 + 2\\frac{1}{8} - 3{,}6 =$",
+        "discussion": "",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",
@@ -306,6 +314,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$2{,}5 - \\frac{7}{8} + 4\\frac{1}{4} - 3{,}2 + \\frac{9}{10} =$",
+        "discussion": "",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",
@@ -343,6 +352,7 @@
         "category": "tiu",
         "component": "Numerik Matematika Dasar",
         "question_text": "$4{,}8 - 3{,}25 + 2\\frac{1}{4} - 1{,}5 + \\frac{1}{8} =$",
+        "discussion": "",
         "main_category": {
             "id": 1,
             "name": "Tes Intelektual Umum",

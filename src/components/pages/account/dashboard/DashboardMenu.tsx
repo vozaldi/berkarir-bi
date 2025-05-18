@@ -2,7 +2,7 @@
 
 import Button from "@/components/basics/buttons/Button";
 import Image from "next/image";
-import { IoDocumentTextOutline, IoFileTrayFullOutline, IoHomeOutline, IoPersonOutline } from "react-icons/io5";
+import { IoBonfireOutline, IoCalculatorOutline, IoDocumentTextOutline, IoFileTrayFullOutline, IoHomeOutline, IoPersonOutline } from "react-icons/io5";
 import LogoutButton from "../LogoutButton";
 import clsx from "clsx";
 import { useUserShallow } from "@/states/userState";
@@ -81,7 +81,30 @@ function DashboardMenu({
               {`Avatar`}
             </Button>
           </li>
-          <li className="mt-8">
+        </ul>
+      </nav>
+
+      <nav className="mt-4">
+        <h3 className="text-sm font-bold">{`Dev. Menu`}</h3>
+
+        <ul className="flex flex-col gap-y-1 mt-2">
+          <li>
+            <Button
+              className="w-full !justify-start bg-dark-200 dark:bg-white/10 hover:bg-dark-300"
+              type="link"
+              href={'/account/demo-latex'}
+            >
+              <IoCalculatorOutline size={18} className="mr-2" />
+
+              {`Convert LaTeX`}
+            </Button>
+          </li>
+        </ul>
+      </nav>
+
+      <nav className="mt-6">
+        <ul className="flex flex-col gap-y-1 mt-2">
+          <li>
             <LogoutButton className="!justify-start w-full" />
           </li>
         </ul>

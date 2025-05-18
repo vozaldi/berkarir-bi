@@ -25,7 +25,8 @@ export type QuestionModel = {
   question_text?: string;
   question_body?: string;
   image?: string;
-
+  
+  discussion?: string;
   isLatex?: boolean;
 
   main_category?: QuestionMainCategory;

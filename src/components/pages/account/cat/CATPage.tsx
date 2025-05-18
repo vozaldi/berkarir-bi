@@ -443,6 +443,7 @@ export default function CATPage({
                   const correctId = discussion.correctAnswers[active];
                   const answerIndex = qs[active].answers?.findIndex(a => a.id == correctId);
                   const letter = ['A', 'B', 'C', 'D', 'E'][Number(answerIndex)];
+                  const explanation = qs[active].discussion || model.explanation;
 
                   return model && (
                     <div className="border border-dark-300 rounded-lg p-4 mt-4">
@@ -450,7 +451,10 @@ export default function CATPage({
                         {`Pembahasan Soal`}
                       </h3>
 
-                      <p className="mt-2">{model.explanation}</p>
+                      <AutodetectText
+                        className="mt-2"
+                        // katexOptions={{ displayMode: true }}
+                      >{explanation}</AutodetectText>
 
                       {(!!letter && 'number' === typeof answerIndex) && (
                         <p className="mt-2">
