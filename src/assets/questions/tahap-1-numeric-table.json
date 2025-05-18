@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1111,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "Tulis angka dalam kotak bertanda ?",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "options": [56, 65, 78, 12, null, 30, 44, 14, 48]
+    }, {
+        "id": 1112,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "Tulis angka dalam kotak bertanda ?",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "options": [4, 8, 20, 9, 3, 15, 6, 6, null]
+    }, {
+        "id": 1113,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "Tulis angka dalam kotak bertanda ?",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "options": [9, null, 28, 61, 96, 43, 57, 80, 34]
+    }, {
+        "id": 1114,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "Tulis angka dalam kotak bertanda ?",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "options": [72, 18, 47, 29, 60, 91, null, 85, 23]
+    }, {
+        "id": 1115,
+        "quiz_id": 9,
+        "category": "tiu",
+        "component": "Numerik Matematika Dasar",
+        "question_text": "Tulis angka dalam kotak bertanda ?",
+        "main_category": {
+            "id": 1,
+            "name": "Tes Intelektual Umum",
+            "code": "tiu"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Numerik Matematika Dasar"
+        },
+        "options": [7, 68, 50, 35, null, 76, 93, 16, 41]
+    }
+]

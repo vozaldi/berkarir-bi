@@ -17,6 +17,7 @@ import CATFloatingAction from "./CATFloatingAction";
 import QuestionWrittenExpression from "./QuestionWrittenExpression";
 import AutodetectText from "@/components/basics/AutodetectText";
 import { useUiShallow } from "@/states/uiState";
+import NumericTable from "@/app/(account)/paket/[slug]/tahap-1/(client)/NumericTable";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   quiz: QuizModel;
@@ -125,9 +126,13 @@ export default function CATPage({
 
   // Comms
   const handleAnswer = async (question: QuestionModel, answer: AnswerModel) => {
-    answer.id && setAnswers(state => ({
+    let answerId = answer.id;
+
+    question.options?.length && (answerId = Number(answer.answer_text));
+
+    answerId && setAnswers(state => ({
       ...state,
-      [active]: answer.id!,
+      [active]: answerId,
     }));
   };
 
@@ -426,15 +431,30 @@ export default function CATPage({
                         >{qs[active].question_text}</AutodetectText>
                       )}
 
-                      <CATAnswer
-                        className={clsx(["mt-4", isEnded && "pointer-events-none"])}
-                        question={qs[active]}
-                        value={answers[active]}
-                        isCorrectCallback={(answer) => {
-                          return discussion.correctAnswers[active] === answer.id;
-                        }}
-                        onChange={(answer) => handleAnswer(qs[active], answer)}
-                      />
+                      {!!qs[active].options?.length && (
+                        <NumericTable
+                          key={qs[active].id}
+                          className="mt-4"
+                          question={qs[active]}
+                          initialValue={answers[active]}
+                          onChange={(answer) => handleAnswer(qs[active], {
+                            id: qs[active].id,
+                            answer_text: answer,
+                          })}
+                        />
+                      )}
+
+                      {!!qs[active].answers?.length && (
+                        <CATAnswer
+                          className={clsx(["mt-4", isEnded && "pointer-events-none"])}
+                          question={qs[active]}
+                          value={answers[active]}
+                          isCorrectCallback={(answer) => {
+                            return discussion.correctAnswers[active] === answer.id;
+                          }}
+                          onChange={(answer) => handleAnswer(qs[active], answer)}
+                        />
+                      )}
                     </div>
                   </div>
                 </div>

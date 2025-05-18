@@ -26,6 +26,7 @@ export type QuestionModel = {
   question_body?: string;
   image?: string;
   
+  options?: Array<number | null>;
   discussion?: string;
   isLatex?: boolean;
 

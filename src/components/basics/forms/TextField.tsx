@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from "clsx";
-import React, { JSX, useEffect } from "react";
+import React, { forwardRef, JSX, useEffect } from "react";
 
 type InputAttribute = Omit<React.InputHTMLAttributes<HTMLInputElement>, "className">;
 type BaseProps = {
@@ -22,7 +22,7 @@ type BaseProps = {
 
 type Props = InputAttribute & BaseProps;
 
-function TextField({
+const TextField = forwardRef<HTMLInputElement, Props>(({
   className,
   labelClassName,
   inputClassName,
@@ -33,7 +33,7 @@ function TextField({
   InputComponent,
   error = false,
   ...props
-}: Props) {
+}: Props, ref) => {
   // Hooks
   const leftRef = React.useRef<HTMLDivElement>(null);
   const rightRef = React.useRef<HTMLDivElement>(null);
@@ -67,6 +67,7 @@ function TextField({
       <div className={clsx("input-text-group", error && "is-invalid")}>
         {!!InputComponent ? InputComponent : (
           <input
+            ref={ref}
             className={clsx("form-control py-2 px-4 border-2 border-primary/50 rounded-lg focus:border-primary outline-none", error && "is-invalid", inputClassName)}
             style={{
               ...(paddingLeft === null ? {} : { paddingLeft }),
@@ -107,7 +108,7 @@ function TextField({
       )}
     </div>
   );
-};
+});
 
 export type TextFieldBaseProps = BaseProps;
 export type TextFieldProps = Props;

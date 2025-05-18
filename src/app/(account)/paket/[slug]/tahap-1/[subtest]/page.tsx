@@ -4,6 +4,7 @@ import { QuestionModel, QuizModel } from "@/types/models";
 import clsx from "clsx";
 import { Suspense } from "react";
 import * as questions_tahap_1_numeric from "@/assets/questions/tahap-1-numeric.json";
+import * as questions_tahap_1_numeric_table from "@/assets/questions/tahap-1-numeric-table.json";
 import * as questions_tahap_2_we from "@/assets/questions/tahap-2-written-expression.json";
 
 export default async function PaketDetailCAT({
@@ -30,6 +31,12 @@ export default async function PaketDetailCAT({
 
         if (subtest === 'numeric') {
           Array.from(questions_tahap_1_numeric).reverse().forEach((item) => {
+            models.unshift(item);
+          });
+        }
+
+        if (subtest === 'numeric') {
+          Array.from(questions_tahap_1_numeric_table).reverse().forEach((item) => {
             models.unshift(item);
           });
         }
