@@ -28,7 +28,7 @@ build:
       else
         echo "No build for this branch: $CI_COMMIT_BRANCH"
       fi
-    - eecho "🛖 Build completed"
+    - echo "🛖 Build completed"
 
 deploy_app:
   stage: deploy
