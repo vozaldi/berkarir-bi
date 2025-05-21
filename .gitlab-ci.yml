@@ -1,0 +1,52 @@
+stages:
+  - install
+  - build
+  - deploy
+
+variables:
+  NODE_ENV: production
+  DOCKER_DRIVER: overlay2
+
+cache:
+  paths:
+    - .yarn/cache/
+    - node_modules/
+
+install_dependencies:
+  stage: install
+  image: node:18-alpine
+  script:
+    - yarn install --frozen-lockfile
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - apk add --no-cache make
+  script:
+    - |
+      if [ "$CI_COMMIT_BRANCH" = "main" ]; then
+        make build-production
+      elif [ "$CI_COMMIT_BRANCH" = "dev" ]; then
+        make build-development
+      else
+        echo "No build for this branch: $CI_COMMIT_BRANCH"
+      fi
+
+deploy_app:
+  stage: deploy
+  image: node:18-alpine
+  before_script:
+    - apk add --no-cache make
+  script:
+    - |
+      if [ "$CI_COMMIT_BRANCH" = "main" ]; then
+        make start-production
+      elif [ "$CI_COMMIT_BRANCH" = "dev" ]; then
+        make start-development
+      else
+        echo "No build for this branch: $CI_COMMIT_BRANCH"
+      fi
+    - echo "🚀 Deployment step here (scp, rsync, ssh, or webhook)"
