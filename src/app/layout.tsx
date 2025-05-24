@@ -6,8 +6,10 @@ import React from "react";
 import ToastMessage from "@/components/basics/ToastMessage";
 import { Lato } from "next/font/google";
 import clsx from "clsx";
-import { RootStoreProvider } from "@/states/providers/storeProvider";
+import { RootStoreProvider } from "@/states/providers/RootStoreProvider";
 import { cookies } from "next/headers";
+import { UserModel } from "@/types/models";
+import { httpServer } from "@/server/httpServer";
 
 const LatoSans = Lato({
   weight: ["300", "400", "700", "900"],
@@ -34,6 +36,12 @@ export default async function RootLayout({
 }>) {
   const cookie = await cookies();
   const theme = cookie.get('theme');
+  const user = cookie.get('user');
+  let currentUser: UserModel | null = null;
+
+  if (user?.value) {
+    currentUser = await httpServer('/profile').then<UserModel | null>((data) => data.data).catch(() => null);
+  }
 
   return (
     <html lang="en" className={clsx([theme?.value === 'dark' && 'dark'])}>
@@ -44,7 +52,10 @@ export default async function RootLayout({
           LatoSans.variable,
         ])}
       >
-        <RootStoreProvider theme={theme?.value === 'dark' ? 'dark' : 'light'}>
+        <RootStoreProvider
+          theme={theme?.value === 'dark' ? 'dark' : 'light'}
+          user={currentUser}
+        >
           {children}
 
           <ToastMessage />

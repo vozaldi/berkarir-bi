@@ -26,6 +26,7 @@ function LoginForm({
 }: Props) {
   // Hooks
   const router = useRouter();
+  const userState = useUserState();
 
   const input = useFields({
     username: '',
@@ -72,7 +73,7 @@ function LoginForm({
       if (data?.data) {
         const user = data.data;
 
-        useUserState.getState().setUser(user);
+        userState.getState().setUser(user);
 
         return setDetail(state => ({ ...state, isFinished: true, user }));
       }

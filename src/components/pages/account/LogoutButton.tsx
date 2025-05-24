@@ -19,6 +19,7 @@ function LogoutButton({
 }: Props) {
   // Hooks
   const router = useRouter();
+  const userState = useUserState();
 
   // States
   const [isSaving, setIsSaving] = useState(false);
@@ -37,7 +38,7 @@ function LogoutButton({
     return httpService.self('/auth/logout', {
       method: 'POST',
     }).then(() => {
-      useUserState.getState().setUser(null);
+      userState.getState().setUser(null);
 
       return router.push('/');
     }).catch((err) => {

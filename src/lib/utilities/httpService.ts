@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { appConfig, isDev } from '../config';
 import { useUserState } from '@/states/userState';
+import { rootState } from '@/states/providers/RootStoreProvider';
 
 /**
  * Build HTTP request that returs Promise of the response
@@ -13,7 +14,7 @@ import { useUserState } from '@/states/userState';
  */
 const httpService = async (url: string, args: AxiosRequestConfig = {}, dataOnly: boolean = true): Promise<any> => {
   const { data = {}, method, headers = {} } = args;
-  const user = useUserState.getState().user;
+  const user = rootState?.user?.getState().user;
   const isExternal = url.indexOf('http') === 0;
   const methodLC = (method || 'get').toLowerCase();
   let domain = appConfig('API_URL');

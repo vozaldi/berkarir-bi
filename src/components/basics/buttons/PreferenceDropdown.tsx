@@ -19,6 +19,7 @@ function PreferenceDropdown({
   ...props
 }: Props) {
   // Hooks
+  const uiState = useUiState();
   const typography = useUiShallow((state) => state.typography);
 
   const input = useFields({
@@ -115,7 +116,7 @@ function PreferenceDropdown({
                     isActive && "border-transparent bg-primary hover:bg-primary/80 text-white",
                   ])}
                   size="xs"
-                  onClick={() => useUiState.getState().setTypographySize(item.size)}
+                  onClick={() => uiState.getState().setTypographySize(item.size)}
                 >
                   {item.label}
                 </Button>

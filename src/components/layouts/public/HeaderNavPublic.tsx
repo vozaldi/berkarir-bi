@@ -3,6 +3,7 @@
 import PreferenceDropdown from "@/components/basics/buttons/PreferenceDropdown";
 import ThemeToggle from "@/components/basics/buttons/ThemeToggle";
 import { appConfig } from "@/lib/config";
+import { rootState } from "@/states/providers/RootStoreProvider";
 import { useUiShallow, useUiState } from "@/states/uiState";
 import clsx from "clsx";
 import Image from "next/image";
@@ -20,13 +21,14 @@ function HeaderNavPublic({
   ...props
 }: Props) {
   // Hooks
+  const uiState = useUiState();
   const theme = useUiShallow((state) => state.theme);
 
   const navRef = useRef<HTMLDivElement>(null);
 
   // Effects
   useEffect(() => {
-    useUiState.setState((state): typeof state => ({
+    uiState.setState((state): typeof state => ({
       ...state,
       layouts: {
         ...state.layouts,

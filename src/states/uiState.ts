@@ -1,9 +1,9 @@
-import { create, createStore } from "zustand";
+import { createStore, useStore } from "zustand";
 import { useShallow } from "zustand/shallow";
 import { LayoutObject } from "../types/utilities";
 import { uiActions, UiStoreActions } from "./actions/uiActions";
-import { createJSONStorage, persist } from "zustand/middleware";
 import { AppTheme } from "@/lib/statiscs/colors";
+import { useRootStoreContext } from "./providers/RootStoreProvider";
 
 export type UiTypographySize = 'base' | 'sm' | 'lg' | 'xl';
 export type UiTypographyState = {
@@ -44,23 +44,18 @@ export const createUiState = (initialState?: Partial<UIStateType>) => {
   }));
 };
 
-export const useUiState = create<RootUIState, UiStateMiddleware>(
-  persist(
-    (set, get) => ({
-      ...initialUiState,
-      ...uiActions(set, get),
-    }),
-    {
-      name: "ui-store",
-      storage: createJSONStorage(() => localStorage),
-      partialize: (state) => ({
-        theme: state.theme,
-        typography: state.typography,
-      }),
-    },
-  )
-);
+export function useUiState() {
+  const state = useRootStoreContext();
+
+  if (!state) throw new Error("Hook must be used within a RootStoreProvider");
+
+  return state.ui;
+};
 
 export function useUiShallow<U>(selector: (state: RootUIState) => U): U {
-  return useUiState(useShallow(selector));
+  const state = useRootStoreContext();
+
+  if (!state) throw new Error("Hook must be used within a RootStoreProvider");
+
+  return useStore(state.ui, useShallow(selector));
 };
