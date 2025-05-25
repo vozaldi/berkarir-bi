@@ -1,5 +1,6 @@
 import DashboardMenu from "@/components/pages/account/dashboard/DashboardMenu";
-import PaketDetail from "../(client)/PaketDetail";
+import PaketDetail from "../../(client)/PaketDetail";
+import PaketBreadcrumbs from "../../(client)/(navigations)/PaketBreadcrumbs";
 
 export default async function PaketTahapPage() {
   return (
@@ -9,6 +10,8 @@ export default async function PaketTahapPage() {
       </div>
 
       <div className="lg:col-span-9 col-span-12 flex flex-col gap-y-4">
+        <PaketBreadcrumbs />
+
         <PaketDetail />
       </div>
     </section>

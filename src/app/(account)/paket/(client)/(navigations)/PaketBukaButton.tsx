@@ -1,19 +1,19 @@
 'use client';
 
 import Button from "@/components/basics/buttons/Button";
-import CATDisclaimerModal from "@/components/pages/account/cat/CATDisclaimerModal";
-import { QuizModel } from "@/types/models";
+import { PaketModel } from "@/types/models";
 import clsx from "clsx";
 import { useState } from "react";
 import { IoArrowForward } from "react-icons/io5";
+import PaketDisclaimerModal from "../PaketDisclaimerModal";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
-  quiz: QuizModel;
+  paket: PaketModel;
 };
 
 function PaketBukaButton({
   className,
-  quiz,
+  paket,
   ...props
 }: Props) {
   // States
@@ -32,11 +32,10 @@ function PaketBukaButton({
         </Button>
       </div>
     
-      <CATDisclaimerModal
+      <PaketDisclaimerModal
         isVisible={disclaimer}
         onHide={() => setDisclaimer(false)}
-        quiz={quiz}
-        tahap={0}
+        paket={paket}
       />
     </>
   );

@@ -1,33 +1,36 @@
 "use client";
 
-import { QuizModel } from "@/types/models";
+import { PaketModel, QuizModel } from "@/types/models";
 import { createContext, useContext, useRef } from "react";
 import { createStore, useStore } from "zustand";
 import { useShallow } from "zustand/shallow";
 
 type PaketStore = {
-  quiz: QuizModel;
+  paket: PaketModel;
+  quiz: QuizModel | null;
 };
 
 type PaketStoreApi = ReturnType<typeof createPaketStore>;
 
 type Props = React.PropsWithChildren & {
-  quiz: QuizModel;
+  paket: PaketModel;
 };
 
-const createPaketStore = (quiz: QuizModel) => {
+const createPaketStore = (paket: PaketModel, initialState?: Partial<PaketStore>) => {
   return createStore<PaketStore>((set) => ({
-    quiz,
+    paket,
+    quiz: null,
+    ...initialState,
   }));
 };
 
 const PaketContext = createContext<PaketStoreApi | undefined>(undefined);
 
-export default function PaketProvider({ children, quiz }: Props) {
+export default function PaketProvider({ children, paket }: Props) {
   const storeRef = useRef<PaketStoreApi>(null);
 
   if (!storeRef.current) {
-    storeRef.current = createPaketStore(quiz);
+    storeRef.current = createPaketStore(paket);
   }
 
   return (

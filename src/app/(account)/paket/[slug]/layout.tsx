@@ -1,7 +1,7 @@
 import { httpServer } from "@/server/httpServer";
-import { QuizModel } from "@/types/models";
-import PaketProvider from "./(client)/PaketProvider";
+import { PaketModel, QuizModel } from "@/types/models";
 import Error404 from "@/components/pages/errors/Error404";
+import PaketProvider from "../(client)/(providers)/PaketProvider";
 
 export default async function PaketDetailLayout({
   children,
@@ -12,8 +12,8 @@ export default async function PaketDetailLayout({
 }>) {
   const { slug } = await params;
 
-  const quiz = await httpServer(`/v1/quizzes/${slug}`)
-    .then((data): QuizModel => {
+  const paket = await httpServer(`/v1/quizzes/${slug}`)
+    .then((data): PaketModel => {
       if (data.data) {
         return data.data;
       }
@@ -21,12 +21,12 @@ export default async function PaketDetailLayout({
       throw data;
     }).catch((err) => null);
 
-  if (!quiz) {
+  if (!paket) {
     return <Error404 />;
   }
 
   return (
-    <PaketProvider quiz={quiz}>
+    <PaketProvider paket={paket}>
       {children}
     </PaketProvider>
   );

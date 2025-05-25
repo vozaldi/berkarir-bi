@@ -2,12 +2,11 @@
 
 import clsx from "clsx";
 import { IoCalendarOutline, IoTimeOutline } from "react-icons/io5";
-import { usePaketShallow } from "./PaketProvider";
 import Button from "@/components/basics/buttons/Button";
 import Badge from "@/components/basics/Badge";
 import { useState } from "react";
-import CATDisclaimerModal from "@/components/pages/account/cat/CATDisclaimerModal";
 import { moment } from "@/lib/utilities";
+import { usePaketShallow } from "./(providers)/PaketProvider";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   
@@ -18,7 +17,7 @@ export default function PaketDetail({
   ...props
 }: Props) {
   // 
-  const quiz = usePaketShallow((state) => state.quiz);
+  const paket = usePaketShallow((state) => state.paket);
 
   // States
   const [showDisclaimer, setShowDisclaimer] = useState(false);
@@ -27,7 +26,7 @@ export default function PaketDetail({
     <div className={clsx(["bg-card rounded-lg shadow-lg pt-4 pb-8 px-6", className])} {...props}>
       <div className="flex flex-col items-center text-center">
         <h1 className="text-2xl font-bold px-3 pb-4 border-b border-dark-300">
-          {quiz.name}
+          {paket.name}
         </h1>
 
         <p className="mt-4">
@@ -96,13 +95,6 @@ export default function PaketDetail({
             </div>
           </div>
         ))}
-
-        <CATDisclaimerModal
-          isVisible={showDisclaimer}
-          onHide={() => setShowDisclaimer(false)}
-          quiz={quiz}
-          tahap={1}
-        />
       </div>
     </div>
   );

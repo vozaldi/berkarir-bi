@@ -1,9 +1,9 @@
 import Error404 from "@/components/pages/errors/Error404";
 import { httpServer } from "@/server/httpServer";
-import { QuestionMainCategory, QuestionModel, QuizModel } from "@/types/models";
+import { PaketModel, QuestionMainCategory, QuestionModel } from "@/types/models";
 import clsx from "clsx";
 import Image from "next/image";
-import PaketBukaButton from "./(client)/PaketBukaButton";
+import PaketBukaButton from "../(client)/(navigations)/PaketBukaButton";
 
 export default async function PaketDetailPage({
   params,
@@ -12,8 +12,8 @@ export default async function PaketDetailPage({
 }) {
   const { slug } = await params;
 
-  const quiz = await httpServer(`/v1/quizzes/${slug}`)
-    .then((data): QuizModel => {
+  const paket = await httpServer(`/v1/quizzes/${slug}`)
+    .then((data): PaketModel => {
       if (data.data) {
         return data.data;
       }
@@ -34,7 +34,7 @@ export default async function PaketDetailPage({
       throw data;
     }).catch((): QuestionModel[] => []);
 
-  if (!quiz) {
+  if (!paket) {
     return (
       <Error404 className="my-8" />
     );
@@ -60,7 +60,7 @@ export default async function PaketDetailPage({
     <>
       <div className="container mx-auto py-6 px-4 grid grid-cols-3 gap-6">
         <div className="col-span-2 flex flex-col">
-          <h1 className="text-xl font-bold">{quiz.name}</h1>
+          <h1 className="text-xl font-bold">{paket.name}</h1>
 
           <p className="text-sm text-dark-500">
             {`Berisi total ${questions.length} soal`}
@@ -81,7 +81,7 @@ export default async function PaketDetailPage({
             ))}
           </div>
 
-          <PaketBukaButton className="flex pt-4" quiz={quiz} />
+          <PaketBukaButton className="flex pt-4" paket={paket} />
 
           <div className="mt-8 bg-card rounded-lg shadow-md p-4">
             <h3 className="text-lg font-bold">{`Detail Paket`}</h3>
@@ -111,8 +111,8 @@ export default async function PaketDetailPage({
         <div className="col-span-1">
           <Image
             // src={`/assets/images/products/product-1.jpg`}
-            src={`https://picsum.photos/seed/${quiz.name}/512/256`}
-            alt={quiz.name || `Image`}
+            src={`https://picsum.photos/seed/${paket.name}/512/256`}
+            alt={paket.name || `Image`}
             className="w-full h-auto rounded-lg shadow-md"
             width={400}
             height={200}
