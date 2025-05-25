@@ -2,12 +2,13 @@
 
 import clsx from "clsx";
 import dayjs from "dayjs";
-import Lottie from "lottie-react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import * as countdown_flame from '@/assets/lotties/countdown-flame.json';
 import { LayoutObject } from "@/types/utilities";
-import numeral from "numeral";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   onTimerEnd?: () => void;
@@ -166,18 +167,16 @@ function TimerCAT({
 
       {!isEnded && (
         <div className="absolute inset-0 rounded-lg overflow-hidden z-40">
-          {'undefined' !== typeof window?.document && (
-            <Lottie
-              className={clsx([
-                "absolute bottom-0 inset-x-0 transition-transform duration-150 ease-in-out",
-                (!timer || timer > flameTrigger) && "opacity-0",
-              ])}
-              style={{ transform: `translateY(${flameY}px)` }}
-              animationData={countdown_flame}
-              loop={true}
-              autoplay={true}
-            />
-          )}
+          <Lottie
+            className={clsx([
+              "absolute bottom-0 inset-x-0 transition-transform duration-150 ease-in-out",
+              (!timer || timer > flameTrigger) && "opacity-0",
+            ])}
+            style={{ transform: `translateY(${flameY}px)` }}
+            animationData={countdown_flame}
+            loop={true}
+            autoplay={true}
+          />
         </div>
       )}
 

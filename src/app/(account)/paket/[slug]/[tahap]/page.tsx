@@ -9,7 +9,7 @@ export default async function PaketTahapPage() {
         <DashboardMenu className="sticky top-24" />
       </div>
 
-      <div className="lg:col-span-9 col-span-12 flex flex-col gap-y-4">
+      <div className="lg:col-span-9 col-span-12 flex flex-col gap-y-8">
         <PaketBreadcrumbs />
 
         <PaketDetail />

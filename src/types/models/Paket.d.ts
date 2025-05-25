@@ -9,4 +9,14 @@ export type PaketModel = {
   updated_at?: string;
 
   quizes?: QuizModel[];
+  categories?: PaketCategory[];
+};
+
+export type PaketCategory = {
+  id?: number;
+  name?: string;
+  title?: string;
+  code?: string;
+
+  quizes?: QuizModel[];
 };

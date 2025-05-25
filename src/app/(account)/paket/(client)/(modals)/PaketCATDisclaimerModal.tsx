@@ -2,25 +2,30 @@
 
 import Button from "@/components/basics/buttons/Button";
 import Modal, { ModalProps } from "@/components/basics/Modal";
-import { PaketModel, QuizModel } from "@/types/models";
+import { PaketCategory, QuizModel } from "@/types/models";
 import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { usePaketShallow } from "../(providers)/PaketProvider";
 
 type Props = ModalProps & {
-  paket?: PaketModel;
+  category?: PaketCategory | null;
   quiz?: QuizModel | null;
+  subtest?: string;
   tahap?: number;
 };
 
 function PaketCATDisclaimerModal({
-  paket,
+  category,
   quiz,
   tahap,
+  subtest,
   ...props
 }: Props) {
   // Hooks
   const router = useRouter();
+
+  const paket = usePaketShallow((state) => state.paket);
 
   // States
   const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +36,15 @@ function PaketCATDisclaimerModal({
 
     setIsLoading(true);
 
-    router.push(`/paket/${paket?.id}/${quiz?.id}?end=${date}`);
+    if (!quiz && !category) {
+      return router.push(`/paket/${paket?.id}`);
+    } else if (!category) {
+      return router.push(`/paket/${paket?.id}/${quiz?.id}`);
+    } else if (subtest) {
+      return router.push(`/paket/${paket?.id}/${category?.id}/${subtest}?end=${date}`);
+    }
+
+    router.push(`/paket/${paket?.id}/${category?.id}/${quiz?.id}?end=${date}`);
   };
 
   return (

@@ -17,7 +17,7 @@ import CATFloatingAction from "./CATFloatingAction";
 import QuestionWrittenExpression from "./QuestionWrittenExpression";
 import AutodetectText from "@/components/basics/AutodetectText";
 import { useUiShallow } from "@/states/uiState";
-import NumericTable from "@/app/(account)/paket/[slug]/tahap-1/(client)/NumericTable";
+import NumericTable from "@/app/(account)/paket/(client)/(components)/NumericTable";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   quiz: QuizModel;

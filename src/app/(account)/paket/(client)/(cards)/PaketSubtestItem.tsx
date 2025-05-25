@@ -2,14 +2,17 @@
 
 import Badge from "@/components/basics/Badge";
 import Button from "@/components/basics/buttons/Button";
+import { QuizModel } from "@/types/models";
 import clsx from "clsx";
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import React, { useRef, useState } from "react";
+import { LottieRefCurrentProps } from "lottie-react";
+import dynamic from "next/dynamic";
+import React, { useRef } from "react";
 import { IoTimeOutline } from "react-icons/io5";
 
-export type SubtestItem = {
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
+export type SubtestItem = QuizModel & {
   category?: string;
-  name?: string;
   title?: string;
   question?: number;
   minute?: number;
@@ -23,7 +26,7 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
   onMulaiClick?: (subtest: SubtestItem) => void;
 };
 
-function Tahap1SubtestItem({
+function PaketSubtestItem({
   className,
   subtest,
   onMulaiClick,
@@ -50,15 +53,13 @@ function Tahap1SubtestItem({
           <div className="absolute w-[144px] aspect-square bg-white/75 rounded-4xl" />
         )}
 
-        {'undefined' !== typeof window?.document && (
-          <Lottie
-            animationData={subtest.lottie}
-            loop={true}
-            autoplay={false}
-            lottieRef={lottieRef}
-            className={clsx(["-my-12", subtest.lottieClassName])}
-          />
-        )}
+        <Lottie
+          animationData={subtest.lottie}
+          loop={true}
+          autoplay={false}
+          lottieRef={lottieRef}
+          className={clsx(["-my-12", subtest.lottieClassName])}
+        />
       </div>
 
       <p className="mt-2 opacity-80">
@@ -83,4 +84,4 @@ function Tahap1SubtestItem({
   );
 };
 
-export default Tahap1SubtestItem;
+export default PaketSubtestItem;

@@ -4,6 +4,7 @@ import { appConfig } from "@/lib/config";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
 
 export type BreadcrubPage = {
   label?: string;
@@ -33,8 +34,8 @@ function Breadcrumbs({
 
       {!hideDashboard && (
         <>
-          <Link href="/" className="font-bold">
-            <span className="text-primary">{`Dashboard`}</span>
+          <Link href="/" className="text-primary font-bold hover:underline">
+            <span>{`Dashboard`}</span>
           </Link>
 
           {!!pages.length && (
@@ -44,19 +45,27 @@ function Breadcrumbs({
       )}
 
       {pages.map((page, index) => {
-        if (typeof page === 'string') {
-          return <span key={index}>{page}</span>;
+        if (typeof page === 'string' || !page.url) {
+          const label = typeof page === "string" ? page : page.label;
+
+          return <span key={index}>{label}</span>;
         }
 
         return (
-          <a
-            key={index}
-            href={page.url}
-            target={page.target}
-            rel="noopener noreferrer"
-          >
-            {page.label}
-          </a>
+          <Fragment key={index}>
+            <Link
+              key={index}
+              className="text-primary font-bold hover:underline"
+              href={page.url}
+              target={page.target}
+            >
+              <span>{page.label}</span>
+            </Link>
+
+            {(index < pages.length - 1) && (
+              <span className="opacity-50">/</span>
+            )}
+          </Fragment>
         );
       })}
     </div>
