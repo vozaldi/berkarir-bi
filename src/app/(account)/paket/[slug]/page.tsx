@@ -1,12 +1,11 @@
-import Button from "@/components/basics/buttons/Button";
 import Error404 from "@/components/pages/errors/Error404";
 import { httpServer } from "@/server/httpServer";
 import { QuestionMainCategory, QuestionModel, QuizModel } from "@/types/models";
 import clsx from "clsx";
 import Image from "next/image";
-import { IoArrowForward } from "react-icons/io5";
+import PaketBukaButton from "./(client)/PaketBukaButton";
 
-export default async function PaketDetail({
+export default async function PaketDetailPage({
   params,
 }: {
   params: Promise<{ slug: string }>
@@ -82,16 +81,7 @@ export default async function PaketDetail({
             ))}
           </div>
 
-          <div className="flex pt-4">
-            <Button
-              className="!rounded-full !px-4"
-              color="primary"
-            >
-              <span>{`Buka Paket`}</span>
-
-              <IoArrowForward className="ml-2" />
-            </Button>
-          </div>
+          <PaketBukaButton className="flex pt-4" quiz={quiz} />
 
           <div className="mt-8 bg-card rounded-lg shadow-md p-4">
             <h3 className="text-lg font-bold">{`Detail Paket`}</h3>

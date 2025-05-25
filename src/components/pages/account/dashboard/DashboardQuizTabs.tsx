@@ -164,7 +164,7 @@ function DashboardQuizTabs({
         isVisible={!!catModel}
         onHide={() => setCatModel(null)}
         quiz={catModel}
-        tahap={1}
+        tahap={0}
       />
     </div>
   );

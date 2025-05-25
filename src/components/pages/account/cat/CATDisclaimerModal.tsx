@@ -29,7 +29,9 @@ function CATDisclaimerModal({
 
     setIsLoading(true);
 
-    if (tahap === 1) {
+    if (tahap === 0) {
+      return router.push(`/paket/${quiz?.id}/tahap`);
+    } else if (tahap === 1) {
       return router.push(`/paket/${quiz?.id}/tahap-1`);
     } else if (quiz?.quiz_type?.key === 'practice') {
       return router.push(`/account/latihan-soal/${quiz?.id}?end=${date}`);
