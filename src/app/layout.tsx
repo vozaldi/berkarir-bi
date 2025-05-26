@@ -40,7 +40,11 @@ export default async function RootLayout({
   let currentUser: UserModel | null = null;
 
   if (user?.value) {
-    currentUser = await httpServer('/profile').then<UserModel | null>((data) => data.data).catch(() => null);
+    currentUser = await httpServer('/profile').then<UserModel | null>((data) => {
+      const token = JSON.parse(user?.value || '{}')?.token;
+
+      return { ...data.data, token };
+    }).catch(() => null);
   }
 
   return (
