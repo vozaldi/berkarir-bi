@@ -137,6 +137,18 @@ const CATQuestionList = forwardRef<CATQuestionListRef, Props>(({
                 onClick={() => setActive(index)}
               >
                 {index + 1}
+
+                {(isActive || isMarked) && (
+                  <div className="flex gap-1 absolute bottom-1 inset-x-1">
+                    {(isAnswered && isActive) && (
+                      <div className="flex-1 bg-green-500 rounded-xl h-1.5" />
+                    )}
+
+                    {isMarked && (
+                      <div className="flex-1 bg-orange-500 rounded-xl h-1.5" />
+                    )}
+                  </div>
+                )}
               </Button>
             </div>
           );
