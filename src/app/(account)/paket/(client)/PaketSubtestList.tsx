@@ -56,35 +56,40 @@ export default function PaketSubtestList({
       lottie: lottie_figural,
       lottieClassName: "h-[144px] max-h-full",
     }, {
+      category: "tpu",
       name: `Pengetahuan Umum`,
       lottie: lottie_pengetahuan_umum,
       question: 50,
       minute: 30,
       lottieClassName: "h-[180px] max-h-full",
     }, {
+      category: "tpk",
       name: `Kebanksentralan`,
       lottie: lottie_kebanksentralan,
       question: 70,
       minute: 40,
       lottieClassName: "h-[144px] max-h-full",
     }, {
+      category: "tbi-structure",
       name: `TBI Structure`,
       lottie: lottie_tbi_structure,
       question: 20,
       minute: 12.5,
       lottieClassName: "h-[144px] max-h-full",
     }, {
+      category: "tbi-expression",
       name: `TBI Written Expression`,
       lottie: lottie_tbi_expression,
       question: 50,
       minute: 30,
-      lottieClassName: "h-[180px] max-h-full",
+      lottieClassName: "h-[180px]",
     }, {
+      category: "tbi-reading",
       name: `TBI Reading`,
       lottie: lottie_tbi_reading,
       question: 20,
       minute: 20,
-      lottieClassName: "h-[180px] max-h-full",
+      lottieClassName: "h-[180px]",
     },
   ];
 

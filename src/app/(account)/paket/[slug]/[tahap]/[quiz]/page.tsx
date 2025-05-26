@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import * as questions_tahap_1_numeric from "@/assets/questions/tahap-1-numeric.json";
 import * as questions_tahap_1_numeric_table from "@/assets/questions/tahap-1-numeric-table.json";
 import * as questions_tahap_2_we from "@/assets/questions/tahap-2-written-expression.json";
+import * as questions_tahap_2_reading from "@/assets/questions/tahap-2-reading.json";
 
 export default async function PaketDetailSubtestPage({
   params,
@@ -41,8 +42,14 @@ export default async function PaketDetailSubtestPage({
           });
         }
 
-        if (subtest === 'verbal') {
+        if (subtest === 'tbi-expression') {
           Array.from(questions_tahap_2_we).reverse().forEach((item) => {
+            models.unshift(item);
+          });
+        }
+
+        if (subtest === 'tbi-reading') {
+          Array.from(questions_tahap_2_reading).reverse().forEach((item) => {
             models.unshift(item);
           });
         }

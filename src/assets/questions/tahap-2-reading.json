@@ -1,0 +1,213 @@
+[
+    {
+        "id": 2216,
+        "quiz_id": 9,
+        "group": 1,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "What is the main idea of the passage?",
+        "question_body": "<b>The Origin of Paper </b>\n\nPaper, one of the most significant inventions in human history, was first developed in China around 105 AD during the Eastern Han Dynasty by a court official named Cai Lun. Before the invention of paper, people used materials such as bones, bamboo, silk, or parchment made from animal skins to record information. However, these materials were often expensive or inconvenient to produce in large quantities.\n\nCai Lun's innovation involved mixing mulberry bark, hemp, old rags, and water to form a pulp. This pulp was then pressed and dried into thin sheets that could be written on. <b>His invention quickly gained popularity</b> across China due to its low cost and practicality. By the 7th century, paper-making techniques had spread to Korea and Japan. Eventually, through trade and war, the technology reached the Islamic world, and later Europe by the 12th century.\n\nThe availability of paper <b>revolutionized</b> the way information was recorded and shared. It contributed significantly to the development of literature, education, and science. In Europe, paper played a crucial role in the success of the printing press, invented by Johannes Gutenberg in the 15th century. This technological combination allowed books and knowledge to become accessible to a much broader audience, sparking cultural and scientific advancements during the Renaissance.\n\nToday, despite the rise of digital media, paper remains an essential medium in education, communication, and packaging industries. The humble invention that began in ancient China continues to impact the world in profound ways.",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 5721,
+                "answer_text": "The printing press was the most important invention in Europe"
+            },
+            {
+                "id": 5722,
+                "answer_text": "Cai Lun discovered a new way to print books"
+            },
+            {
+                "id": 5723,
+                "answer_text": "Paper revolutionized human communication and knowledge sharing"
+            },
+            {
+                "id": 5724,
+                "answer_text": "Digital media has replaced paper in modern times"
+            }
+        ]
+    }, {
+        "id": 2217,
+        "quiz_id": 9,
+        "group": 1,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "According to the passage, why was paper considered a better alternative to earlier materials?",
+        "question_body": "<b>The Origin of Paper </b>\n\nPaper, one of the most significant inventions in human history, was first developed in China around 105 AD during the Eastern Han Dynasty by a court official named Cai Lun. Before the invention of paper, people used materials such as bones, bamboo, silk, or parchment made from animal skins to record information. However, these materials were often expensive or inconvenient to produce in large quantities.\n\nCai Lun's innovation involved mixing mulberry bark, hemp, old rags, and water to form a pulp. This pulp was then pressed and dried into thin sheets that could be written on. <b>His invention quickly gained popularity</b> across China due to its low cost and practicality. By the 7th century, paper-making techniques had spread to Korea and Japan. Eventually, through trade and war, the technology reached the Islamic world, and later Europe by the 12th century.\n\nThe availability of paper <b>revolutionized</b> the way information was recorded and shared. It contributed significantly to the development of literature, education, and science. In Europe, paper played a crucial role in the success of the printing press, invented by Johannes Gutenberg in the 15th century. This technological combination allowed books and knowledge to become accessible to a much broader audience, sparking cultural and scientific advancements during the Renaissance.\n\nToday, despite the rise of digital media, paper remains an essential medium in education, communication, and packaging industries. The humble invention that began in ancient China continues to impact the world in profound ways.",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 5721,
+                "answer_text": "It was stronger and more durable than silk"
+            },
+            {
+                "id": 5722,
+                "answer_text": "It could be reused easily"
+            },
+            {
+                "id": 5723,
+                "answer_text": "It was cheaper and easier to produce"
+            },
+            {
+                "id": 5724,
+                "answer_text": "It was waterproof and long-lasting"
+            }
+        ]
+    }, {
+        "id": 2218,
+        "quiz_id": 9,
+        "group": 2,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "What is the main idea of the passage?",
+        "question_body": "<b> Nikola Tesla: A Forgotten Genius </b>\n\nNikola Tesla was a brilliant inventor and engineer whose contributions to science and technology were immense, yet he did not always receive the recognition he deserved during his lifetime. Born in 1856 in what is now Croatia, Tesla moved to the United States in 1884 and soon began working with Thomas Edison. Although their collaboration was short-lived due to conflicting views on electrical systems—Edison supported direct current (DC) while Tesla championed alternating current (AC)—Tesla's work on AC would eventually power much of the modern world.\n\nTesla's innovations went far beyond AC electricity. He developed the Tesla coil, a device that is still used in radio technology today, and <b>he envisioned wireless communication decades before the invention of the internet</b> or smartphones. He even proposed the idea of wireless energy transmission, a concept that remains a subject of scientific interest.\n\nDespite his achievements, Tesla struggled financially. He was more focused on scientific discovery than business, often neglecting to patent his inventions or manage his finances. As a result, many of his ideas were credited to others or forgotten entirely. Tesla died in relative <b>obscurity</b> in 1943, but in recent years, public and academic interest in his work has grown significantly. Today, he is widely regarded as one of the most visionary inventors in history.",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 5721,
+                "answer_text": "Nikola Tesla became wealthy from his inventions."
+            },
+            {
+                "id": 5722,
+                "answer_text": "Tesla and Edison worked together throughout their careers."
+            },
+            {
+                "id": 5723,
+                "answer_text": "Tesla was a visionary inventor whose work was underappreciated in his time."
+            },
+            {
+                "id": 5724,
+                "answer_text": "Tesla invented the internet and smartphones."
+            }
+        ]
+    }, {
+        "id": 2219,
+        "quiz_id": 9,
+        "group": 2,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "According to the passage, what was Tesla’s position regarding electrical systems?",
+        "question_body": "<b> Nikola Tesla: A Forgotten Genius </b>\n\nNikola Tesla was a brilliant inventor and engineer whose contributions to science and technology were immense, yet he did not always receive the recognition he deserved during his lifetime. Born in 1856 in what is now Croatia, Tesla moved to the United States in 1884 and soon began working with Thomas Edison. Although their collaboration was short-lived due to conflicting views on electrical systems—Edison supported direct current (DC) while Tesla championed alternating current (AC)—Tesla's work on AC would eventually power much of the modern world.\n\nTesla's innovations went far beyond AC electricity. He developed the Tesla coil, a device that is still used in radio technology today, and <b>he envisioned wireless communication decades before the invention of the internet</b> or smartphones. He even proposed the idea of wireless energy transmission, a concept that remains a subject of scientific interest.\n\nDespite his achievements, Tesla struggled financially. He was more focused on scientific discovery than business, often neglecting to patent his inventions or manage his finances. As a result, many of his ideas were credited to others or forgotten entirely. Tesla died in relative <b>obscurity</b> in 1943, but in recent years, public and academic interest in his work has grown significantly. Today, he is widely regarded as one of the most visionary inventors in history.",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 5721,
+                "answer_text": "He preferred direct current (DC)"
+            },
+            {
+                "id": 5722,
+                "answer_text": "He rejected all electrical systems."
+            },
+            {
+                "id": 5723,
+                "answer_text": "He favored alternating current (AC)."
+            },
+            {
+                "id": 5724,
+                "answer_text": "He worked only on wireless energy."
+            }
+        ]
+    }, {
+        "id": 2222,
+        "quiz_id": 9,
+        "group": 3,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "What is the main idea of the passage?",
+        "question_body": "<b>Earthquakes: Shaking the Ground Beneath Us</b>\n\nEarthquakes are natural phenomena that occur when the Earth's tectonic plates suddenly shift, releasing energy that travels through the ground. These movements can cause significant shaking, especially near fault lines—cracks in the Earth's crust where these plates meet. The strength of an earthquake is measured on the Richter scale, which ranges from minor tremors barely felt by people to catastrophic quakes that can destroy buildings and infrastructure.\n\nMost earthquakes happen along the boundaries of tectonic plates. For example, the Pacific Ring of Fire, an area around the edges of the Pacific Ocean, experiences frequent seismic activity due to its many active fault lines. In addition to ground shaking, earthquakes can also trigger secondary disasters such as landslides, tsunamis, and fires, especially in urban areas.\n\nAlthough scientists cannot predict exactly when or where an earthquake will strike, <b>they have developed tools to <u>assess</u> earthquake risk.</b> Seismographs are instruments that record the intensity and duration of ground movement. Geological studies and historical data also help experts identify high-risk zones and improve building codes to make structures more resistant to seismic forces.\n\nUnderstanding how earthquakes work and how to prepare for them is essential, particularly for those living in high-risk regions. Emergency drills, early warning systems, and public education can significantly reduce the impact of these natural events on human life and property.",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 5721,
+                "answer_text": "Earthquakes only occur in the Pacific Ocean."
+            },
+            {
+                "id": 5722,
+                "answer_text": "Earthquakes can be prevented with the right tools."
+            },
+            {
+                "id": 5723,
+                "answer_text": "Earthquakes are dangerous but can be prepared for with proper planning."
+            },
+            {
+                "id": 5724,
+                "answer_text": "The Richter scale is outdated and inaccurate."
+            }
+        ]
+    }, {
+        "id": 2223,
+        "quiz_id": 9,
+        "group": 3,
+        "category": "en",
+        "component": "Written Expression",
+        "question_text": "According to the passage, what was Tesla’s position regarding electrical systems?",
+        "question_body": "<b>Earthquakes: Shaking the Ground Beneath Us</b>\n\nEarthquakes are natural phenomena that occur when the Earth's tectonic plates suddenly shift, releasing energy that travels through the ground. These movements can cause significant shaking, especially near fault lines—cracks in the Earth's crust where these plates meet. The strength of an earthquake is measured on the Richter scale, which ranges from minor tremors barely felt by people to catastrophic quakes that can destroy buildings and infrastructure.\n\nMost earthquakes happen along the boundaries of tectonic plates. For example, the Pacific Ring of Fire, an area around the edges of the Pacific Ocean, experiences frequent seismic activity due to its many active fault lines. In addition to ground shaking, earthquakes can also trigger secondary disasters such as landslides, tsunamis, and fires, especially in urban areas.\n\nAlthough scientists cannot predict exactly when or where an earthquake will strike, <b>they have developed tools to <u>assess</u> earthquake risk.</b> Seismographs are instruments that record the intensity and duration of ground movement. Geological studies and historical data also help experts identify high-risk zones and improve building codes to make structures more resistant to seismic forces.\n\nUnderstanding how earthquakes work and how to prepare for them is essential, particularly for those living in high-risk regions. Emergency drills, early warning systems, and public education can significantly reduce the impact of these natural events on human life and property.",
+        "main_category": {
+            "id": 1,
+            "name": "TBI Written Expression",
+            "code": "en"
+        },
+        "sub_category": {
+            "id": 1,
+            "name": "Written Expression"
+        },
+        "answers": [
+            {
+                "id": 5721,
+                "answer_text": "Hurricanes and tornadoes"
+            },
+            {
+                "id": 5722,
+                "answer_text": "Floods and volcanic eruptions"
+            },
+            {
+                "id": 5723,
+                "answer_text": "Landslides, tsunamis, and fires"
+            },
+            {
+                "id": 5724,
+                "answer_text": "Rain and strong winds"
+            }
+        ]
+    }
+]
