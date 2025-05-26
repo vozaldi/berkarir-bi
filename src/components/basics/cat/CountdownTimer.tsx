@@ -16,7 +16,7 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
   isEnded?: boolean;
 };
 
-function TimerCAT({
+function CountdownTimer({
   className,
   onTimerEnd,
   onDateChange,
@@ -91,7 +91,7 @@ function TimerCAT({
   }, [tick, duration, onTimerEnd]);
 
   // Vars
-  const timer = duration - tick;
+  const timer = Math.max(duration - tick, 0);
   const hour = Math.floor(timer / 3600);
   const minute = Math.floor((timer % 3600) / 60);
   const second = timer % 60;
@@ -113,14 +113,16 @@ function TimerCAT({
     );
   }
 
-  return timer < 0 ? (
-    <div className={clsx([className])}>
-      <p className="text-red-500">Waktu Habis</p>
-    </div>
-  ) : (
+  const timerEnded = timer <= 0 && tick;
+
+  return (
     <div
       ref={containerRef}
-      className={clsx(['bg-primary rounded-lg relative', className])}
+      className={clsx([
+        'rounded-lg relative',
+        !timerEnded ? 'bg-primary' : 'bg-red-500',
+        className,
+      ])}
       {...props}
     >
       <div className="flex relative z-50 text-shadow-lg/30 text-shadow-primary">
@@ -143,7 +145,7 @@ function TimerCAT({
           <div key={item.name} className={clsx([
             "relative p-2 flex-1 min-w-12 flex items-center justify-center",
           ])}>
-            <div className="py-1 px-2 -mt-1 bg-primary/50 rounded-xl backdrop-blur-lg backdrop-opacity-50 text-center">
+            <div className={clsx(["py-1 px-2 -mt-1 rounded-xl backdrop-blur-lg backdrop-opacity-50 text-center", !timerEnded ? 'bg-primary/50' : 'bg-red-500/50'])}>
               <p
                 className={clsx([
                   "relative text-3xl text-white font-bold",
@@ -225,4 +227,4 @@ function TimerCAT({
   );
 };
 
-export default TimerCAT;
+export default CountdownTimer;

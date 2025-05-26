@@ -4,7 +4,6 @@ import Button from "@/components/basics/buttons/Button";
 import Modal from "@/components/basics/Modal";
 import ToastMessage from "@/components/basics/ToastMessage";
 import LaporkanSoalForm from "@/components/forms/account/cat/LaporkanSoalForm";
-import TimerCAT from "@/components/pages/account/cat/TimerCAT";
 import httpService from "@/lib/utilities/httpService";
 import { AnswerModel, AttemptModel, QuestionDiscussion, QuestionMainCategory, QuestionModel, QuizModel } from "@/types/models";
 import clsx from "clsx";
@@ -18,6 +17,7 @@ import QuestionWrittenExpression from "./QuestionWrittenExpression";
 import AutodetectText from "@/components/basics/AutodetectText";
 import { useUiShallow } from "@/states/uiState";
 import NumericTable from "@/app/(account)/paket/(client)/(components)/NumericTable";
+import CountdownTimer from "@/components/basics/cat/CountdownTimer";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   quiz: QuizModel;
@@ -512,7 +512,7 @@ export default function CATPage({
           <div className="sticky top-0 flex flex-col gap-4 xl:gap-6" style={{ top: (uiLayouts.header?.height || 0) + 8 }}>
             {quiz.quiz_type?.key === 'tryout' && (
               <div className="bg-card rounded-xl shadow-md p-4">
-                <TimerCAT
+                <CountdownTimer
                   className="mt-1"
                   onTimerEnd={() => handleEndSesion(true)}
                   onDateChange={(date) => setDate(date)}
