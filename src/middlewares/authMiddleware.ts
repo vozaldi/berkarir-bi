@@ -25,8 +25,6 @@ export const authMiddleware: MiddlewareChain = async (request, response) => {
       expires: undefined,
       path: '/',
     });
-
-    return response;
   }
 
   // Redirect if already logged in
@@ -35,7 +33,7 @@ export const authMiddleware: MiddlewareChain = async (request, response) => {
   }
 
   // Redirect to login if not logged in
-  const shouldAuth = ['/dashboard', '/paket'].find((item) => pathname.startsWith(item));
+  const shouldAuth = ['/dashboard', '/paket', '/account'].find((item) => pathname.startsWith(item));
 
   if (shouldAuth && !user) {
     return () => NextResponse.redirect(new URL('/auth/login', request.url));
