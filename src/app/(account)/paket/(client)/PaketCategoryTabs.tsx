@@ -5,7 +5,8 @@ import Button from "@/components/basics/buttons/Button";
 import { PaketCategory } from "@/types/models";
 import Tabs, { TabNavItem } from "@/components/basics/Tabs";
 import PaketSubtestList from "./PaketSubtestList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   category: PaketCategory;
@@ -19,10 +20,19 @@ function PaketCategoryTabs({
   ...props
 }: Props) {
   // Hooks
+  const router = useRouter();
+
   const paket = usePaketShallow((state) => state.paket);
 
   // States
   const [category, setCategory] = useState<PaketCategory>(categoryProp);
+
+  // Effects
+  useEffect(() => {
+    if (category.id !== categoryProp.id) {
+      router.push(`/paket/${paket.id}/${category.id}`);      
+    }
+  }, [category]);
 
   // Vars
   const { categories = [] } = paket;

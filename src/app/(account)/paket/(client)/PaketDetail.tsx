@@ -6,35 +6,46 @@ import { PaketCategory } from "@/types/models";
 import PaketCategories from "./PaketCategories";
 import PaketCategoryTabs from "./PaketCategoryTabs";
 import { usePathname, useRouter } from "next/navigation";
+import { usePaketShallow } from "./(providers)/PaketProvider";
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
-  
+  categorySlug?: number | string;
 };
 
 export default function PaketDetail({
   className,
+  categorySlug,
   ...props
 }: Props) {
   // Hooks
   const router = useRouter();
-  const pathname = usePathname();
+
+  const paket = usePaketShallow((state) => state.paket);
+
+  const initialCategory = paket.categories?.find((item) => item.id === Number(categorySlug)) || null;
 
   // States
-  const [category, setCategory] = useState<PaketCategory | null>(null);
+  const [category, setCategory] = useState<PaketCategory | null>(initialCategory);
 
   // Effects
   useEffect(() => {
-    category && router.push(pathname, { scroll: false });
-  }, [category]);
+    const category = paket.categories?.find((item) => item.id === Number(categorySlug)) || null;
+
+    setCategory(category);
+  }, [categorySlug]);
 
   return (
     <div className={clsx(["bg-card rounded-lg shadow-lg pt-4 pb-8 px-6", className])} {...props}>
-      {!category && <PaketCategories onCategoryChange={setCategory} />}
+      {!category && (
+        <PaketCategories
+          onCategoryChange={({ id }) => router.push(`/paket/${paket.id}/${id}`)}
+        />
+      )}
 
       {!!category && (
         <PaketCategoryTabs
           category={category}
-          onBackPress={() => setCategory(null)}
+          onBackPress={() => router.push(`/paket/${paket.id}/pilih-tahap`)}
         />
       )}
     </div>

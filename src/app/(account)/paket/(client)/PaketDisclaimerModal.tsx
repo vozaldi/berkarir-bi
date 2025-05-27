@@ -30,7 +30,7 @@ function PaketDisclaimerModal({
       return router.push(`/paket/${paket?.id}/tahap-1`);
     }
 
-    return router.push(`/paket/${paket?.id}/tahap`);
+    return router.push(`/paket/${paket?.id}/pilih-tahap`);
   };
 
   return (

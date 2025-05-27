@@ -2,7 +2,13 @@ import DashboardMenu from "@/components/pages/account/dashboard/DashboardMenu";
 import PaketDetail from "../../(client)/PaketDetail";
 import PaketBreadcrumbs from "../../(client)/(navigations)/PaketBreadcrumbs";
 
-export default async function PaketTahapPage() {
+export default async function PaketTahapPage({
+  params,
+}: {
+  params: Promise<{ tahap: string }>
+}) {
+  const { tahap } = await params;
+
   return (
     <section className="container px-4 mx-auto pt-6 pb-8 grid grid-cols-12 gap-6">
       <div className="lg:col-span-3 col-span-12">
@@ -12,7 +18,7 @@ export default async function PaketTahapPage() {
       <div className="lg:col-span-9 col-span-12 flex flex-col gap-y-8">
         <PaketBreadcrumbs />
 
-        <PaketDetail />
+        <PaketDetail categorySlug={tahap} />
       </div>
     </section>
   );
