@@ -3,8 +3,9 @@
 import clsx from "clsx";
 import KatexText from "./KatexText";
 import { KatexOptions } from "katex";
-import parse, { domToReact } from 'html-react-parser';
+import parse from 'html-react-parser';
 import { Fragment } from "react";
+import '@/styles/scss/autodetect-text.css';
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   katexOptions?: Partial<KatexOptions>;
@@ -30,7 +31,7 @@ function AutodetectText({
         // Split by \n and interleave <br />
         const split = before.split(/\n/);
         split.forEach((segment, i) => {
-          if (i > 0) parts.push(<br key={`br-${match?.index}-${i}`} />);
+          if (i > 0) parts.push(<span key={`br-${match?.index}-${i}`} className="article-br-sm" />);
           if (segment) parts.push(segment);
         });
       }
@@ -51,7 +52,7 @@ function AutodetectText({
       const split = remaining.split(/\n/);
 
       split.forEach((segment, i) => {
-        if (i > 0) parts.push(<br key={`br-tail-${i}`} />);
+        if (i > 0) parts.push(<span key={`br-tail-${i}`} className="article-br-sm" />);
         if (segment) parts.push(segment);
       });
     }
@@ -80,7 +81,7 @@ function AutodetectText({
                   {parts.map((part, i) => (
                     <Fragment key={i}>
                       {part}
-                      {i !== parts.length - 1 && <br />}
+                      {i !== parts.length - 1 && <span className="article-br-sm" />}
                     </Fragment>
                   ))}
                 </>

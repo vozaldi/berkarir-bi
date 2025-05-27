@@ -1,0 +1,6 @@
+.app-autodetect-text {
+    & > .article-br-sm {
+        display: block;
+        height: .5rem;
+    }
+}

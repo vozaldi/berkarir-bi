@@ -32,8 +32,8 @@ function CATFloatingAction({
 }: Props) {
   return (
     <div className={clsx(["flex flex-col items-center pointer-events-none", className])} {...props}>
-      <div className="container mx-auto px-4 flex items-center gap-6">
-        <div className="flex-1 flex justify-between gap-2">
+      <div className="container mx-auto px-4 grid xl:grid-cols-10 2xl:grid-cols-12 grid-cols-12 xl:gap-6 gap-4">
+        <div className="2xl:col-span-9 xl:col-span-7 lg:col-span-8 col-span-12 flex justify-between gap-2">
           <div className="bg-card p-1.5 flex gap-2 items-center rounded-2xl border border-dark-300 dark:border-dark-500/30 pointer-events-auto shadow-sm">
             {!isEnded && (
               <Button
@@ -89,7 +89,7 @@ function CATFloatingAction({
           </div>
         </div>
 
-        <div className="xl:w-3/12 lg:w-4/12 pointer-events-auto hidden md:block">
+        <div className="2xl:col-span-3 xl:col-span-3 lg:col-span-4 col-span-12 pointer-events-auto hidden md:flex items-center justify-center">
           {!isEnded && (
             <Button
               className="w-full bg-orange-500/15 hover:bg-orange-500/30 text-orange-500 flex gap-1 !rounded-xl"
